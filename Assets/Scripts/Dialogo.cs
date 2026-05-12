@@ -2,13 +2,13 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 using Unity.VisualScripting;
+using System.Collections.Generic;
 
 
 public class Dialogo : MonoBehaviour
 {
     TextMeshProUGUI objDialogo;
-    public string frase = "Hola buenas tardes";
-    bool escribiendo = false;
+    public string frase = "";
     float velocidadEscribir = 0.05f;
     float tiempoEntreFrases = 2.0f;
     int bloqueIdentificador = 0;
@@ -23,7 +23,7 @@ public class Dialogo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(escribiendoBloque);
+        Debug.Log(bloqueIdentificador);
      if (escribiendoBloque == false){
 
         //INTRO
@@ -48,6 +48,7 @@ public class Dialogo : MonoBehaviour
                  yield return new WaitForSeconds(tiempoEntreFrases+0.2f+velocidadEscribir*cantidadCaracteres);
                  objDialogo.text = " ";
                  escribiendoBloque = false;
+            
                 }
             }
         
@@ -73,7 +74,6 @@ public class Dialogo : MonoBehaviour
     //Este método escribe la variable "frase" con un poco de delay por letra. Borra todo tras 3 seg.
     void escribirEnPantalla()
     {
-        escribiendo = true;
         StartCoroutine (EscribirLento());
         IEnumerator EscribirLento(){
             
@@ -83,8 +83,17 @@ public class Dialogo : MonoBehaviour
                 yield return new WaitForSeconds(velocidadEscribir);
             }
             yield return new WaitForSeconds(tiempoEntreFrases);
-            
             //escribiendo = false;
         }
+    }
+
+    void esperarAcabarFrase()
+    {
+        StartCoroutine (Esperar());
+        IEnumerator Esperar()
+         {
+         int cantidadCaracteres = frase.Length;
+         yield return new WaitForSeconds(tiempoEntreFrases+0.2f+velocidadEscribir*cantidadCaracteres);
+         }
     }
 }}
