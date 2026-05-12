@@ -15,6 +15,8 @@ public class Dialogo : MonoBehaviour
     int bloqueIdentificador = 0;
     bool escribiendoBloque = false;
     int bloqueElegido = 0;
+    int minListaBloques = 1;
+    int maxListaBloques = 8;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,7 +24,7 @@ public class Dialogo : MonoBehaviour
         objDialogo.text = " ";
 
         //Rellenamos la lista de bloques. el mínimo se incluye, el máximo no. El 0 es la introducción, así que no se incluye. 
-        for (int i = 1; i < 8; i++)
+        for (int i = minListaBloques; i < maxListaBloques; i++)
         {
             bloquesDisponibles.Add(i);
         }
@@ -31,6 +33,7 @@ public class Dialogo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(bloqueIdentificador);
      if (escribiendoBloque == false){
     
         //INTRO bloqueIdentificador 0
@@ -89,13 +92,23 @@ public class Dialogo : MonoBehaviour
 
     //ELIGE UN BLOQUE DE DIALOGO AL AZAR QUE NO HAYA SALIDO ANTES
     //Tenemos una lista de bloques. Elige uno de los disponibles y lo borra de la lista para que no se repita.
-    
+
     void laRuleta()
     {
-        bloqueElegido = Random.Range(1, 10);
+        //Por seguridad. No debería poder pasar, pero si la lista está vacía, se rellena para evitar un error.
+        if (bloquesDisponibles.Count == 0)
+        {
+            for (int i = minListaBloques; i < maxListaBloques; i++)
+            {
+                bloquesDisponibles.Add(i);
+            }
+        }
+
+
+        //Elige un bloque al azar de la lista, lo asigna como bloque elegido y lo borra de la lista. 
+        bloqueElegido = Random.Range(minListaBloques, maxListaBloques);
         if (bloquesDisponibles.Contains(bloqueElegido))
         {
-            bloqueIdentificador = bloqueElegido;
             bloquesDisponibles.Remove(bloqueElegido);
         }
         else
