@@ -11,22 +11,29 @@ public class Dialogo : MonoBehaviour
     public string frase = "";
     float velocidadEscribir = 0.05f;
     float tiempoEntreFrases = 2.0f;
+    private List<int> bloquesDisponibles = new List<int>();
     int bloqueIdentificador = 0;
     bool escribiendoBloque = false;
+    int bloqueElegido = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         objDialogo = this.GetComponent<TextMeshProUGUI>();
         objDialogo.text = " ";
+
+        //Rellenamos la lista de bloques. el mínimo se incluye, el máximo no. El 0 es la introducción, así que no se incluye. 
+        for (int i = 1; i < 8; i++)
+        {
+            bloquesDisponibles.Add(i);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(bloqueIdentificador);
      if (escribiendoBloque == false){
-
-        //INTRO
+    
+        //INTRO bloqueIdentificador 0
 
         if (bloqueIdentificador == 0)
             {
@@ -48,20 +55,11 @@ public class Dialogo : MonoBehaviour
                  yield return new WaitForSeconds(tiempoEntreFrases+0.2f+velocidadEscribir*cantidadCaracteres);
                  objDialogo.text = " ";
                  escribiendoBloque = false;
-            
+                 laRuleta();
+                 bloqueIdentificador = bloqueElegido;
                 }
             }
-        
-
         }
-
-
-
-
-
-
-
-     
     }
 
 
@@ -71,7 +69,8 @@ public class Dialogo : MonoBehaviour
 
 
     //ESCRIBIR EN PANTALLA  
-    //Este método escribe la variable "frase" con un poco de delay por letra. Borra todo tras 3 seg.
+    //Este método escribe la variable "frase" con un poco de delay por letra. Borra todo tras tiempoEntreFrases segundos.
+
     void escribirEnPantalla()
     {
         StartCoroutine (EscribirLento());
@@ -87,7 +86,42 @@ public class Dialogo : MonoBehaviour
         }
     }
 
-    void esperarAcabarFrase()
+
+    //ELIGE UN BLOQUE DE DIALOGO AL AZAR QUE NO HAYA SALIDO ANTES
+    //Tenemos una lista de bloques. Elige uno de los disponibles y lo borra de la lista para que no se repita.
+    
+    void laRuleta()
+    {
+        bloqueElegido = Random.Range(1, 10);
+        if (bloquesDisponibles.Contains(bloqueElegido))
+        {
+            bloqueIdentificador = bloqueElegido;
+            bloquesDisponibles.Remove(bloqueElegido);
+        }
+        else
+        {
+            laRuleta();
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //POZO DE LAS COSAS SIN ACABAR O QUE NO HAN FUNCIONADO  
+
+    /*void esperarAcabarFrase()
     {
         StartCoroutine (Esperar());
         IEnumerator Esperar()
@@ -95,5 +129,8 @@ public class Dialogo : MonoBehaviour
          int cantidadCaracteres = frase.Length;
          yield return new WaitForSeconds(tiempoEntreFrases+0.2f+velocidadEscribir*cantidadCaracteres);
          }
-    }
+    }*/
+
+    
+
 }}
