@@ -14,53 +14,29 @@ public class Dialogo : MonoBehaviour
     private List<int> bloquesDisponibles = new List<int>();
     int bloqueIdentificador = 0;
     bool escribiendoBloque = false;
-    int bloqueElegido = 0;
     int minListaBloques = 1;
     int maxListaBloques = 8;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
         objDialogo = this.GetComponent<TextMeshProUGUI>();
         objDialogo.text = " ";
 
-        //Rellenamos la lista de bloques. el mínimo se incluye, el máximo no. El 0 es la introducción, así que no se incluye. 
+        //Rellenamos la lista de bloques. El mínimo se incluye, el máximo no. El 0 es la introducción, así que no se incluye. 
         for (int i = minListaBloques; i < maxListaBloques; i++)
         {
             bloquesDisponibles.Add(i);
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         Debug.Log(bloqueIdentificador);
-     if (escribiendoBloque == false){
-    
-        //INTRO bloqueIdentificador 0
-
-        if (bloqueIdentificador == 0)
+     if (escribiendoBloque == false)
+        {
+            if (bloqueIdentificador == 0)
             {
-            escribiendoBloque = true;
-            frase = "¡Ei! ¿Eres tú? Madre mía, ¡cuánto tiempo sin verte! Desde el instituto, ¿verdad? No has cambiado nada, tienes exactamente la misma cara que cuando teníamos 15 años.";
-            escribirEnPantalla();
-            StartCoroutine (Esperar());
-            IEnumerator Esperar()
-            {
-                int cantidadCaracteres = frase.Length;
-                yield return new WaitForSeconds(tiempoEntreFrases+0.2f+velocidadEscribir*cantidadCaracteres);
-                objDialogo.text = " ";
-                frase = "¡Tenemos que ponernos al día! Llevas demasiado tiempo fuera de la ciudad, han pasado muchas cosas…";
-                escribirEnPantalla();
-                StartCoroutine (Esperar());
-                IEnumerator Esperar()
-                {
-                 int cantidadCaracteres = frase.Length;
-                 yield return new WaitForSeconds(tiempoEntreFrases+0.2f+velocidadEscribir*cantidadCaracteres);
-                 objDialogo.text = " ";
-                 escribiendoBloque = false;
-                 laRuleta();
-                 bloqueIdentificador = bloqueElegido;
-                }
+                StartCoroutine(Intro());
             }
         }
     }
@@ -71,25 +47,61 @@ public class Dialogo : MonoBehaviour
 
 
 
-    //ESCRIBIR EN PANTALLA  
-    //Este método escribe la variable "frase" con un poco de delay por letra. Borra todo tras tiempoEntreFrases segundos.
 
-    void escribirEnPantalla()
+
+
+
+
+
+
+
+
+    IEnumerator Intro()
     {
-        StartCoroutine (EscribirLento());
-        IEnumerator EscribirLento(){
-            
-            foreach (char c in frase)
-            {
-                objDialogo.text += c;
-                yield return new WaitForSeconds(velocidadEscribir);
-            }
-            yield return new WaitForSeconds(tiempoEntreFrases);
-            //escribiendo = false;
-        }
+        escribiendoBloque = true;
+        frase = "¡Ei! ¿Eres tú? Madre mía, ¡cuánto tiempo sin verte! Desde el instituto, ¿verdad? No has cambiado nada, tienes exactamente la misma cara que cuando teníamos 15 años.";
+        yield return StartCoroutine (EscribirLento());
+        frase = "¡Tenemos que ponernos al día! Llevas demasiado tiempo fuera de la ciudad, han pasado muchas cosas…";
+        yield return StartCoroutine (EscribirLento());
+        laRuleta();
+        escribiendoBloque = false;
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //ESCRIBE "FRASE" EN PANTALLA LETRA POR LETRA, ESPERA tiempoEntreFrases SEGUNDOS Y BORRA EL TEXTO.
+
+    IEnumerator EscribirLento(){
+    
+    foreach (char c in frase)
+    {
+        objDialogo.text += c;
+        yield return new WaitForSeconds(velocidadEscribir);
+    }
+    yield return new WaitForSeconds(tiempoEntreFrases);
+    objDialogo.text = " ";
+    }
+
+    
+
+    
     //ELIGE UN BLOQUE DE DIALOGO AL AZAR QUE NO HAYA SALIDO ANTES
     //Tenemos una lista de bloques. Elige uno de los disponibles y lo borra de la lista para que no se repita.
 
@@ -106,44 +118,19 @@ public class Dialogo : MonoBehaviour
 
 
         //Elige un bloque al azar de la lista, lo asigna como bloque elegido y lo borra de la lista. 
-        bloqueElegido = Random.Range(minListaBloques, maxListaBloques);
-        if (bloquesDisponibles.Contains(bloqueElegido))
+        bloqueIdentificador = Random.Range(minListaBloques, maxListaBloques);
+        if (bloquesDisponibles.Contains(bloqueIdentificador))
         {
-            bloquesDisponibles.Remove(bloqueElegido);
+            bloquesDisponibles.Remove(bloqueIdentificador);
         }
         else
         {
             laRuleta();
         }
+
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //POZO DE LAS COSAS SIN ACABAR O QUE NO HAN FUNCIONADO  
-
-    /*void esperarAcabarFrase()
-    {
-        StartCoroutine (Esperar());
-        IEnumerator Esperar()
-         {
-         int cantidadCaracteres = frase.Length;
-         yield return new WaitForSeconds(tiempoEntreFrases+0.2f+velocidadEscribir*cantidadCaracteres);
-         }
-    }*/
-
     
 
-}}
+}
