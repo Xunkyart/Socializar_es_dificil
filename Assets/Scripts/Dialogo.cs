@@ -15,7 +15,9 @@ public class Dialogo : MonoBehaviour
     int bloqueIdentificador = 0;
     bool escribiendoBloque = false;
     int minListaBloques = 1;
-    int maxListaBloques = 8;
+    int maxListaBloques = 2;
+    public string emocion = "neutral";
+    public float exito = 0.5f;
     
     void Start()
     {
@@ -34,10 +36,17 @@ public class Dialogo : MonoBehaviour
         Debug.Log(bloqueIdentificador);
      if (escribiendoBloque == false)
         {
+            //INTRODUCCIÓN
             if (bloqueIdentificador == 0)
             {
                 StartCoroutine(Intro());
             }
+            //BLOQUE 1
+            else if  (bloqueIdentificador == 1)
+            {
+                StartCoroutine(Bloque1());
+            }
+
         }
     }
 
@@ -63,6 +72,75 @@ public class Dialogo : MonoBehaviour
         yield return StartCoroutine (EscribirLento());
         frase = "¡Tenemos que ponernos al día! Llevas demasiado tiempo fuera de la ciudad, han pasado muchas cosas…";
         yield return StartCoroutine (EscribirLento());
+        laRuleta();
+        escribiendoBloque = false;
+    }
+
+    IEnumerator Bloque1()
+    {
+        escribiendoBloque = true;
+        frase = "Nuevo curro en la tienda ¿eh?. Tranquilo, no todos estamos hechos para el éxito ¿sabes a lo que me refiero?";
+        yield return StartCoroutine(EscribirLento());
+        frase = "Hay gente que tiene que suplir su falta de talento de alguna manera… no todos podemos ganarnos la vida haciendo cosas interesantes.";
+        yield return StartCoroutine(EscribirLento());
+        if (emocion == "neutral")
+        {
+            frase = "Al final es como funciona el mundo, nos guste o no.";
+            exito += 0.1f;
+        }
+        else if (emocion == "feliz")
+        {
+           frase = "Sabía que lo entenderías, no todo el mundo está hecho para triunfar.";
+           exito += 0.3f;
+        }
+        else if (emocion == "enfadado")
+        {
+            frase = "No pretendía ofender, eh? Que sensible te has vuelto…";
+            exito -= 0.3f;
+        }
+        else if (emocion == "triste")
+        {
+           frase = "Pero hombre, ¡no te pongas triste! Este curro es temporal, ¿verdad?";
+           exito -= 0.1f;
+        }
+        else if (emocion == "sorprendido")
+        {
+            frase = "¿Ah? ¿No estás de acuerdo? Pues así es como funciona el mundo";
+            exito -= 0.1f;
+        }
+        yield return StartCoroutine(EscribirLento());
+        frase = "Pero bueno, hablando de trabajo… ¡Adivina quién acaba de conseguir un ascenso!";
+        yield return StartCoroutine(EscribirLento());
+        frase = "Un poco tarde si me preguntas, ya era hora de que alguien se diese cuenta de lo importante que soy para la empresa ¡estarían perdidos sin mí!";
+        yield return StartCoroutine(EscribirLento());
+        frase = "¿Que donde trabajo? En una firma de modelos claro, ¡el lugar indicado para una chica como yo!";
+        yield return StartCoroutine(EscribirLento());
+        if (emocion == "neutral")
+        {
+            frase = "Podrías alegrarte un poco más, tu falta de éxito en la vida no es culpa mía.";
+            exito -= 0.2f;
+        }
+        else if (emocion == "feliz")
+        {
+           frase = "La vida acaba poniendo a cada uno en su lugar, y el mío está bastante guay.";
+           exito += 0.2f;
+        }
+        else if (emocion == "enfadado")
+        {
+            frase = "¿Qué? ¿Envidioso de mi increíble vida?";
+            exito -= 0.1f;
+        }
+        else if (emocion == "triste")
+        {
+           frase = "¡No te apures! No todos estamos hechos de la misma pasta, no hay que avergonzarse de ser mediocre.";
+           exito -= 0.2f;
+        }
+        else if (emocion == "sorprendido")
+        {
+            frase = "Es normal que te sorprenda, la gente suele quedarse sin palabras ante mi genialidad.";
+            exito += 0.1f;
+        }
+        yield return StartCoroutine(EscribirLento());
         laRuleta();
         escribiendoBloque = false;
     }
@@ -131,6 +209,33 @@ public class Dialogo : MonoBehaviour
     }
 
 
-    
 
 }
+/*
+        if (emocion == "neutral")
+        {
+            frase = "";
+            exito += 0.0f;
+        }
+        else if (emocion == "feliz")
+        {
+           frase = "";
+           exito += 0.0f;
+        }
+        else if (emocion == "enfadado")
+        {
+            frase = "";
+            exito += 0.0f;
+        }
+        else if (emocion == "triste")
+        {
+           frase = "";
+           exito += 0.0f;
+        }
+        else if (emocion == "sorprendido")
+        {
+            frase = "";
+            exito += 0.0f;
+        }
+        yield return StartCoroutine(EscribirLento());
+        */
