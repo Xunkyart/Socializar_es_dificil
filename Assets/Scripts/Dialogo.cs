@@ -18,6 +18,8 @@ public class Dialogo : MonoBehaviour
     int maxListaBloques = 2;
     public string emocion = "neutral";
     public float exito = 0.5f;
+
+    //public int[] listadoFrases;
     
     void Start()
     {
@@ -237,5 +239,10 @@ public class Dialogo : MonoBehaviour
             frase = "";
             exito += 0.0f;
         }
+
+
+
+
+
         yield return StartCoroutine(EscribirLento());
         */
