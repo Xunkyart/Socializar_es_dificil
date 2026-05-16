@@ -1,6 +1,7 @@
 using System.Numerics;
 using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Personaje : MonoBehaviour
 {
@@ -11,13 +12,13 @@ public class Personaje : MonoBehaviour
     public GameObject dientesInf;
     public GameObject comisuraIzq;
     public GameObject comisuraDcha;
+    
     //SLIDERS
-    public GameObject sliderCejaIZq;
-    public GameObject SliderCeraDcha;
-    public GameObject SliderAperturaBoca;
-    public GameObject SliderComisuraIzq;
-    public GameObject SliderComisuraDcha;
-    public float valor = 0;
+    public Slider sliderCejaIzq;
+    public Slider SliderCeraDcha;
+    public Slider SliderAperturaBoca;
+    public Slider SliderComisuraIzq;
+    public Slider SliderComisuraDcha;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -47,26 +48,26 @@ public class Personaje : MonoBehaviour
     //Sacar el valor del slider
     public void getSliderCejaIzq()
     {
-        
+        float valorCejaIzq = sliderCejaIzq.value;
     }
 
         public void getSliderCejaDcha()
     {
-        
+        float valorCejaDcha = SliderCeraDcha.value;
     }
 
         public void getSliderAperturaBoca()
     {
-        
+        float valorAperturaBoca = SliderAperturaBoca.value;
     }
 
         public void getSliderComisuraIzq()
     {
-        
+        float valorComisuraIzq = SliderComisuraIzq.value;
     }
 
         public void getSliderComisuraDcha()
     {
-        
+        float valorComisuraDcha = SliderComisuraDcha.value;
     }
 }

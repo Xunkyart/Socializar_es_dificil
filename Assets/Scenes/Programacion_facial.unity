@@ -1990,11 +1990,11 @@ MonoBehaviour:
   dientesInf: {fileID: 1040070286}
   comisuraIzq: {fileID: 1050336390}
   comisuraDcha: {fileID: 570270804}
-  sliderCejaIZq: {fileID: 251635648}
-  SliderCeraDcha: {fileID: 416545850}
-  SliderAperturaBoca: {fileID: 1592874622}
-  SliderComisuraIzq: {fileID: 155466578}
-  SliderComisuraDcha: {fileID: 1523102504}
+  sliderCejaIzq: {fileID: 251635650}
+  SliderCeraDcha: {fileID: 416545852}
+  SliderAperturaBoca: {fileID: 1592874624}
+  SliderComisuraIzq: {fileID: 155466580}
+  SliderComisuraDcha: {fileID: 1523102506}
   valor: 0
 --- !u!1 &1701758613
 GameObject:
