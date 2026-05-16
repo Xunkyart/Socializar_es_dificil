@@ -5,6 +5,18 @@ using UnityEngine.UI;
 
 public class Personaje : MonoBehaviour
 {
+    //EMOCIÓN DEL PERSONAJE
+    public string emocion = "neutra";
+
+
+    //ESTADOS ABSOLUTOS DE LOS RASGOS FACIALES
+    string alturaCejaIzq = "media";
+    string alturaCejaDcha = "media";
+    string aperturaBoca = "cerrada";
+    string alturaComisuraIzq = "media";
+    string alturaComisuraDcha = "media";
+
+
     //  PICKERS
     public GameObject cejaIZq;
     public GameObject ceraDcha;
@@ -93,11 +105,35 @@ public class Personaje : MonoBehaviour
     {
         float valorComisuraIzq = SliderComisuraIzq.value;
         comisuraIzq.transform.position = new UnityEngine.Vector3(posInicialComisuraIzq.x, posInicialComisuraIzq.y + valorComisuraIzq*0.012f, posInicialComisuraIzq.z);
+   
+        if (valorComisuraIzq > 0.55f)
+        {
+            alturaComisuraIzq = "alta";
+        }
+        else if (valorComisuraIzq < -0.2f)
+        {
+            alturaComisuraIzq = "baja";
+        }
+        else
+        {
+            alturaComisuraIzq = "media";
+        }
     }
-
         public void getSliderComisuraDcha()
     {
         float valorComisuraDcha = SliderComisuraDcha.value;
         comisuraDcha.transform.position = new UnityEngine.Vector3(posInicialComisuraDcha.x, posInicialComisuraDcha.y + valorComisuraDcha*0.012f, posInicialComisuraDcha.z);
+        if (valorComisuraDcha > 0.55f)
+        {
+            alturaComisuraDcha = "alta";
+        }
+        else if (valorComisuraDcha < -0.2f)
+        {
+            alturaComisuraDcha = "baja";
+        }
+        else
+        {
+            alturaComisuraDcha = "media";
+        }
     }
 }
