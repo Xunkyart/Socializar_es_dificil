@@ -66,7 +66,45 @@ public class Personaje : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if 
+            ((alturaCejaIzq == "alta" || alturaCejaIzq == "media") && 
+            (alturaCejaDcha == "alta" || alturaCejaDcha == "media") && 
+            alturaComisuraIzq == "alta" &&
+            alturaComisuraDcha == "alta" &&
+            aperturaBoca == "cerrada")
+        {
+            emocion = "feliz";
+        }
+        else if 
+            ((alturaCejaIzq == "alta" || alturaCejaIzq == "media") && 
+            (alturaCejaDcha == "alta" || alturaCejaDcha == "media") && 
+            alturaComisuraIzq == "baja" && 
+            alturaComisuraDcha == "baja" &&
+            aperturaBoca == "cerrada")
+        {
+            emocion = "triste";
+        }
+        else if 
+            (alturaCejaIzq == "baja" && 
+            alturaCejaDcha == "baja" && 
+            (alturaComisuraIzq == "baja" || alturaComisuraIzq == "media") && 
+            (alturaComisuraDcha == "baja" || alturaComisuraDcha == "media"))
+        {
+            emocion = "enfado";
+        }
+        else if 
+            (alturaCejaIzq == "alta" && 
+            alturaCejaDcha == "alta" &&
+            (alturaComisuraIzq == "alta" || alturaComisuraIzq == "media") && 
+            (alturaComisuraDcha == "alta" || alturaComisuraDcha == "media") &&
+            aperturaBoca == "abierta")
+        {
+            emocion = "sorpresa";
+        }
+        else
+        {
+            emocion = "neutra";
+        }
     }
 
 
@@ -99,6 +137,15 @@ public class Personaje : MonoBehaviour
         float valorAperturaBoca = SliderAperturaBoca.value;
         labioInf.transform.position = new UnityEngine.Vector3(posInicialLabioInf.x, posInicialLabioInf.y + valorAperturaBoca*0.02f, posInicialLabioInf.z);
         dientesInf.transform.position = new UnityEngine.Vector3(posInicialDientesInf.x, posInicialDientesInf.y + valorAperturaBoca*0.02f, posInicialDientesInf.z);
+        if (valorAperturaBoca > -0.3f)
+        {
+            aperturaBoca = "cerrada";
+            
+        }
+        else
+        {
+            aperturaBoca = "abierta";
+        }
     }
 
         public void getSliderComisuraIzq()
