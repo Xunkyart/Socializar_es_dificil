@@ -1,36 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+using TMPro;
+using System.Collections;
+using Unity.VisualScripting;
+using System.Collections.Generic;
 
-public class Dialogo : MonoBehaviour
+
+public class DialogoOld : MonoBehaviour
 {
-    [SerializeField]
-    private NPCDialogueSO[] dialogueData;
-
-    [SerializeField]
-    private EmotionType emotion; // ← se asigna desde el Inspector
-
     TextMeshProUGUI objDialogo;
     public string frase = "";
-
-    [SerializeField]
     float velocidadEscribir = 0.05f;
     float tiempoEntreFrases = 2.0f;
     private List<int> bloquesDisponibles = new List<int>();
     int bloqueIdentificador = 0;
     bool escribiendoBloque = false;
-    bool esperandoContinuacion = false;
     int minListaBloques = 1;
     int maxListaBloques = 2;
-
+    public string emocion = "neutral";
     public float exito = 0.5f;
 
+    //public int[] listadoFrases;
+    
     void Start()
     {
         objDialogo = this.GetComponent<TextMeshProUGUI>();
         objDialogo.text = " ";
 
+        //Rellenamos la lista de bloques. El mínimo se incluye, el máximo no. El 0 es la introducción, así que no se incluye. 
         for (int i = minListaBloques; i < maxListaBloques; i++)
         {
             bloquesDisponibles.Add(i);
@@ -40,158 +36,36 @@ public class Dialogo : MonoBehaviour
     void Update()
     {
         Debug.Log(bloqueIdentificador);
-        if (escribiendoBloque == false)
+     if (escribiendoBloque == false)
         {
+            //INTRODUCCIÓN
             if (bloqueIdentificador == 0)
             {
-                // StartCoroutine(Intro());
+                StartCoroutine(Intro());
             }
-            else if (bloqueIdentificador == 1)
+            //BLOQUE 1
+            else if  (bloqueIdentificador == 1)
             {
-                // StartCoroutine(Bloque1());
-            }
-        }
-    }
-
-    public void IniciarDialogo()
-    {
-        if (escribiendoBloque)
-        {
-            return;
-        }
-
-        StartCoroutine(PlayDialogues(dialogueData));
-    }
-
-    private IEnumerator PlayDialogues(NPCDialogueSO[] dialogues)
-    {
-        if (dialogues == null || dialogues.Length == 0)
-        {
-            yield break;
-        }
-
-        escribiendoBloque = true;
-
-        for (int i = 0; i < dialogues.Length; i++)
-        {
-            NPCDialogueSO dialogue = dialogues[i];
-
-            if (dialogue == null)
-            {
-                continue;
+                StartCoroutine(Bloque1());
             }
 
-            yield return StartCoroutine(PlayDialogue(dialogue));
-
-            if (HasPendingDialogue(dialogues, i + 1))
-            {
-                esperandoContinuacion = true;
-                yield return new WaitUntil(() => esperandoContinuacion == false);
-            }
-        }
-
-        escribiendoBloque = false;
-    }
-
-    private bool HasPendingDialogue(NPCDialogueSO[] dialogues, int startIndex)
-    {
-        for (int i = startIndex; i < dialogues.Length; i++)
-        {
-            if (dialogues[i] != null)
-            {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    //REPRODUCE EL DIALOGO LETRA POR LETRA
-    private IEnumerator PlayDialogue(NPCDialogueSO dialogue)
-    {
-        if (dialogue.blocks == null)
-        {
-            yield break;
-        }
-
-        EmotionType currentEmotion = emotion;
-
-        // para cada bloque de diálogo, dependiendo de su tipo, se asigna la frase a mostrar y se modifica el éxito según la emoción actual
-        foreach (DialogueBlock block in dialogue.blocks)
-        {
-            Debug.Log($"Procesando bloque: {block.blockType}");
-
-            //si es fijo
-            if (block.blockType == DialogueBlockType.Fixed)
-            {
-                frase = block.fixedPhrase;
-            }
-            //en caso contrario, si es emocional
-            else if (block.blockType == DialogueBlockType.Emotional)
-            {
-                if (block.TryGetEmotionalResponse(currentEmotion, out EmotionalResponse response))
-                {
-                    frase = response.phrase;
-                    exito += response.successModifier;
-                }
-            }
-
-            yield return StartCoroutine(EscribirLento());
         }
     }
 
-    //ESCRIBE "FRASE" EN PANTALLA LETRA POR LETRA, ESPERA tiempoEntreFrases SEGUNDOS Y BORRA EL TEXTO.
-    IEnumerator EscribirLento()
-    {
-        foreach (char c in frase)
-        {
-            objDialogo.text += c;
-            yield return new WaitForSeconds(velocidadEscribir);
-        }
-        yield return new WaitForSeconds(tiempoEntreFrases);
-        objDialogo.text = " ";
-    }
-
-    public void ContinuarDialogo()
-    {
 
 
-        if (!escribiendoBloque || !esperandoContinuacion)
-        {
-            return;
-        }
-
-        esperandoContinuacion = false;
-    }
-
-    //Para pruebas: lo vinculo desde los botones del UI
-    public void AplicarEmocion(string newEmotion)
-    {
-        if (newEmotion == "neutral")
-        {
-            emotion = EmotionType.Neutral;
-        }
-        else if (newEmotion == "feliz")
-        {
-            emotion = EmotionType.Feliz;
-        }
-        else if (newEmotion == "enfadado")
-        {
-            emotion = EmotionType.Enfadado;
-        }
-        else if (newEmotion == "triste")
-        {
-            emotion = EmotionType.Triste;
-        }
-        else if (newEmotion == "sorprendido")
-        {
-            emotion = EmotionType.Sorprendido;
-        }
-    }
-}
 
 
-/*
+
+
+
+
+
+
+
+
+
+
 
     IEnumerator Intro()
     {
@@ -292,7 +166,18 @@ public class Dialogo : MonoBehaviour
 
 
 
+    //ESCRIBE "FRASE" EN PANTALLA LETRA POR LETRA, ESPERA tiempoEntreFrases SEGUNDOS Y BORRA EL TEXTO.
 
+    IEnumerator EscribirLento(){
+    
+    foreach (char c in frase)
+    {
+        objDialogo.text += c;
+        yield return new WaitForSeconds(velocidadEscribir);
+    }
+    yield return new WaitForSeconds(tiempoEntreFrases);
+    objDialogo.text = " ";
+    }
 
     
 
@@ -312,7 +197,7 @@ public class Dialogo : MonoBehaviour
         }
 
 
-        //Elige un bloque al azar de la lista, lo asigna como bloque elegido y lo borra de la lista.
+        //Elige un bloque al azar de la lista, lo asigna como bloque elegido y lo borra de la lista. 
         bloqueIdentificador = Random.Range(minListaBloques, maxListaBloques);
         if (bloquesDisponibles.Contains(bloqueIdentificador))
         {
@@ -328,8 +213,6 @@ public class Dialogo : MonoBehaviour
 
 
 }
-*/
-
 /*
         if (emocion == "neutral")
         {
