@@ -10,6 +10,8 @@ public class DialogueBlock
     // Si blockType == Fixed
     [TextArea(2, 4)]
     public string fixedPhrase;
+    public float velocidadEscribir;
+    public float tiempoEspera;
 
     // Si blockType == Emotional
     public EmotionalResponse[] emotionalResponses;

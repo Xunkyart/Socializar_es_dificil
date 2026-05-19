@@ -89,7 +89,6 @@ public class Dialogo : MonoBehaviour
                 yield return new WaitUntil(() => esperandoContinuacion == false);
             }
         }
-
         escribiendoBloque = false;
     }
 
@@ -102,7 +101,6 @@ public class Dialogo : MonoBehaviour
                 return true;
             }
         }
-
         return false;
     }
 
