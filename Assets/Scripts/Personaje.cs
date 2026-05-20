@@ -1,5 +1,3 @@
-using System.Numerics;
-using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,14 +6,12 @@ public class Personaje : MonoBehaviour
     //EMOCIÓN DEL PERSONAJE
     public string emocion = "neutra";
 
-
     //ESTADOS ABSOLUTOS DE LOS RASGOS FACIALES
     string alturaCejaIzq = "media";
     string alturaCejaDcha = "media";
     string aperturaBoca = "cerrada";
     string alturaComisuraIzq = "media";
     string alturaComisuraDcha = "media";
-
 
     //  PICKERS
     public GameObject cejaIZq;
@@ -25,14 +21,12 @@ public class Personaje : MonoBehaviour
     public GameObject comisuraIzq;
     public GameObject comisuraDcha;
 
-
     //SLIDERS
     public Slider sliderCejaIzq;
     public Slider SliderCeraDcha;
     public Slider SliderAperturaBoca;
     public Slider SliderComisuraIzq;
     public Slider SliderComisuraDcha;
-
 
     //POSICIÓN QUE MODIFICARÁN LOS SLIDERS
     UnityEngine.Vector3 posCejaIzq;
@@ -42,7 +36,6 @@ public class Personaje : MonoBehaviour
     UnityEngine.Vector3 posComisuraIzq;
     UnityEngine.Vector3 posComisuraDcha;
 
-
     //POSICIONES INICIALES Y DE REFERENCIA PARA LAS MODIFICACIONES
     UnityEngine.Vector3 posInicialCejaIzq;
     UnityEngine.Vector3 posInicialCejaDcha;
@@ -50,7 +43,6 @@ public class Personaje : MonoBehaviour
     UnityEngine.Vector3 posInicialDientesInf;
     UnityEngine.Vector3 posInicialComisuraIzq;
     UnityEngine.Vector3 posInicialComisuraDcha;
-
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -67,38 +59,42 @@ public class Personaje : MonoBehaviour
     void Update()
     {
         Debug.Log(emocion);
-        if 
-            ((alturaCejaIzq == "alta" || alturaCejaIzq == "media") && 
-            (alturaCejaDcha == "alta" || alturaCejaDcha == "media") && 
-            alturaComisuraIzq == "alta" &&
-            alturaComisuraDcha == "alta" &&
-            aperturaBoca == "cerrada")
+        if (
+            (alturaCejaIzq == "alta" || alturaCejaIzq == "media")
+            && (alturaCejaDcha == "alta" || alturaCejaDcha == "media")
+            && alturaComisuraIzq == "alta"
+            && alturaComisuraDcha == "alta"
+            && aperturaBoca == "cerrada"
+        )
         {
             emocion = "feliz";
         }
-        else if 
-            ((alturaCejaIzq == "alta" || alturaCejaIzq == "media") && 
-            (alturaCejaDcha == "alta" || alturaCejaDcha == "media") && 
-            alturaComisuraIzq == "baja" && 
-            alturaComisuraDcha == "baja" &&
-            aperturaBoca == "cerrada")
+        else if (
+            (alturaCejaIzq == "alta" || alturaCejaIzq == "media")
+            && (alturaCejaDcha == "alta" || alturaCejaDcha == "media")
+            && alturaComisuraIzq == "baja"
+            && alturaComisuraDcha == "baja"
+            && aperturaBoca == "cerrada"
+        )
         {
             emocion = "triste";
         }
-        else if 
-            (alturaCejaIzq == "baja" && 
-            alturaCejaDcha == "baja" && 
-            (alturaComisuraIzq == "baja" || alturaComisuraIzq == "media") && 
-            (alturaComisuraDcha == "baja" || alturaComisuraDcha == "media"))
+        else if (
+            alturaCejaIzq == "baja"
+            && alturaCejaDcha == "baja"
+            && (alturaComisuraIzq == "baja" || alturaComisuraIzq == "media")
+            && (alturaComisuraDcha == "baja" || alturaComisuraDcha == "media")
+        )
         {
             emocion = "enfado";
         }
-        else if 
-            (alturaCejaIzq == "alta" && 
-            alturaCejaDcha == "alta" &&
-            (alturaComisuraIzq == "alta" || alturaComisuraIzq == "media") && 
-            (alturaComisuraDcha == "alta" || alturaComisuraDcha == "media") &&
-            aperturaBoca == "abierta")
+        else if (
+            alturaCejaIzq == "alta"
+            && alturaCejaDcha == "alta"
+            && (alturaComisuraIzq == "alta" || alturaComisuraIzq == "media")
+            && (alturaComisuraDcha == "alta" || alturaComisuraDcha == "media")
+            && aperturaBoca == "abierta"
+        )
         {
             emocion = "sorpresa";
         }
@@ -108,25 +104,15 @@ public class Personaje : MonoBehaviour
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     //Sacar el valor del slider
     public void getSliderCejaIzq()
     {
         float valorCejaIzq = sliderCejaIzq.value;
-        cejaIZq.transform.position = new UnityEngine.Vector3(posInicialCejaIzq.x, posInicialCejaIzq.y + valorCejaIzq*0.012f, posInicialCejaIzq.z);
+        cejaIZq.transform.position = new UnityEngine.Vector3(
+            posInicialCejaIzq.x,
+            posInicialCejaIzq.y + valorCejaIzq * 0.012f,
+            posInicialCejaIzq.z
+        );
         if (valorCejaIzq > 0.55f)
         {
             alturaCejaIzq = "alta";
@@ -141,10 +127,14 @@ public class Personaje : MonoBehaviour
         }
     }
 
-        public void getSliderCejaDcha()
+    public void getSliderCejaDcha()
     {
         float valorCejaDcha = SliderCeraDcha.value;
-        cejaDcha.transform.position = new UnityEngine.Vector3(posInicialCejaDcha.x, posInicialCejaDcha.y + valorCejaDcha*0.012f, posInicialCejaDcha.z);
+        cejaDcha.transform.position = new UnityEngine.Vector3(
+            posInicialCejaDcha.x,
+            posInicialCejaDcha.y + valorCejaDcha * 0.012f,
+            posInicialCejaDcha.z
+        );
         if (valorCejaDcha > 0.55f)
         {
             alturaCejaDcha = "alta";
@@ -159,15 +149,22 @@ public class Personaje : MonoBehaviour
         }
     }
 
-        public void getSliderAperturaBoca()
+    public void getSliderAperturaBoca()
     {
         float valorAperturaBoca = SliderAperturaBoca.value;
-        labioInf.transform.position = new UnityEngine.Vector3(posInicialLabioInf.x, posInicialLabioInf.y + valorAperturaBoca*0.02f, posInicialLabioInf.z);
-        dientesInf.transform.position = new UnityEngine.Vector3(posInicialDientesInf.x, posInicialDientesInf.y + valorAperturaBoca*0.02f, posInicialDientesInf.z);
+        labioInf.transform.position = new UnityEngine.Vector3(
+            posInicialLabioInf.x,
+            posInicialLabioInf.y + valorAperturaBoca * 0.02f,
+            posInicialLabioInf.z
+        );
+        dientesInf.transform.position = new UnityEngine.Vector3(
+            posInicialDientesInf.x,
+            posInicialDientesInf.y + valorAperturaBoca * 0.02f,
+            posInicialDientesInf.z
+        );
         if (valorAperturaBoca > -0.3f)
         {
             aperturaBoca = "cerrada";
-            
         }
         else
         {
@@ -175,11 +172,15 @@ public class Personaje : MonoBehaviour
         }
     }
 
-        public void getSliderComisuraIzq()
+    public void getSliderComisuraIzq()
     {
         float valorComisuraIzq = SliderComisuraIzq.value;
-        comisuraIzq.transform.position = new UnityEngine.Vector3(posInicialComisuraIzq.x, posInicialComisuraIzq.y + valorComisuraIzq*0.012f, posInicialComisuraIzq.z);
-   
+        comisuraIzq.transform.position = new UnityEngine.Vector3(
+            posInicialComisuraIzq.x,
+            posInicialComisuraIzq.y + valorComisuraIzq * 0.012f,
+            posInicialComisuraIzq.z
+        );
+
         if (valorComisuraIzq > 0.55f)
         {
             alturaComisuraIzq = "alta";
@@ -193,10 +194,15 @@ public class Personaje : MonoBehaviour
             alturaComisuraIzq = "media";
         }
     }
-        public void getSliderComisuraDcha()
+
+    public void getSliderComisuraDcha()
     {
         float valorComisuraDcha = SliderComisuraDcha.value;
-        comisuraDcha.transform.position = new UnityEngine.Vector3(posInicialComisuraDcha.x, posInicialComisuraDcha.y + valorComisuraDcha*0.012f, posInicialComisuraDcha.z);
+        comisuraDcha.transform.position = new UnityEngine.Vector3(
+            posInicialComisuraDcha.x,
+            posInicialComisuraDcha.y + valorComisuraDcha * 0.012f,
+            posInicialComisuraDcha.z
+        );
         if (valorComisuraDcha > 0.55f)
         {
             alturaComisuraDcha = "alta";
