@@ -42,6 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Cosas que van debajo de la UI
+    uniqueID: 77472923
+    locked: 0
+  - name: Ui
+    uniqueID: 3841283557
+    locked: 0
   m_RenderingLayers:
   - Default
   - Light Layer 1
