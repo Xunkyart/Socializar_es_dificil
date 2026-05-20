@@ -14,14 +14,16 @@ public class Dialogo : MonoBehaviour
     bool escribiendoBloque = false;
     int minListaBloques = 1;
     int maxListaBloques = 6;
-    public string emocion = "neutral";
     public float exito = 0.5f;
+    GameObject personajeJugador;
+    string emocion;
     //public int[] listadoFrases;
 
     void Start()
     {
         objDialogo = this.GetComponent<TextMeshProUGUI>();
         objDialogo.text = " ";
+        personajeJugador = GameObject.FindWithTag("Player");
 
         //Rellenamos la lista de bloques. El mínimo se incluye, el máximo no. El 0 es la introducción, así que no se incluye.
         for (int i = minListaBloques; i < maxListaBloques; i++)
@@ -32,6 +34,9 @@ public class Dialogo : MonoBehaviour
 
     void Update()
     {
+        // Actualizar la emoción del personaje
+        emocion = personajeJugador.GetComponent<Personaje>().emocion;
+        Debug.Log("Emoción actual: " + emocion);
         if (escribiendoBloque == false)
         {
             //INTRODUCCIÓN

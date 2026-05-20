@@ -86,7 +86,7 @@ public class Personaje : MonoBehaviour
             && (alturaComisuraDcha == "baja" || alturaComisuraDcha == "media")
         )
         {
-            emocion = "enfado";
+            emocion = "enfadado";
         }
         else if (
             alturaCejaIzq == "alta"
@@ -96,11 +96,11 @@ public class Personaje : MonoBehaviour
             && aperturaBoca == "abierta"
         )
         {
-            emocion = "sorpresa";
+            emocion = "sorprendido";
         }
         else
         {
-            emocion = "neutra";
+            emocion = "neutral";
         }
     }
 

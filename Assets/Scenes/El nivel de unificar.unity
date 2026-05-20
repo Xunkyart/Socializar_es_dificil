@@ -321,6 +321,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Personaje
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5658717741678651040, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1969,7 +1973,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Dialogo
   frase: Hola buenas tardes
-  emocion: neutral
   exito: 0.5
 --- !u!1 &1346313280 stripped
 GameObject:
