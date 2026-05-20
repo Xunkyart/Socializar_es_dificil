@@ -19,7 +19,7 @@ public class Personaje : MonoBehaviour
 
     //  PICKERS
     public GameObject cejaIZq;
-    public GameObject ceraDcha;
+    public GameObject cejaDcha;
     public GameObject labioInf;
     public GameObject dientesInf;
     public GameObject comisuraIzq;
@@ -55,8 +55,8 @@ public class Personaje : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //posInicialCejaIzq = cejaIZq.transform.position;
-        //posInicialCejaDcha = ceraDcha.transform.position;
+        posInicialCejaIzq = cejaIZq.transform.position;
+        posInicialCejaDcha = cejaDcha.transform.position;
         posInicialLabioInf = labioInf.transform.position;
         posInicialDientesInf = dientesInf.transform.position;
         posInicialComisuraIzq = comisuraIzq.transform.position;
@@ -66,6 +66,7 @@ public class Personaje : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(emocion);
         if 
             ((alturaCejaIzq == "alta" || alturaCejaIzq == "media") && 
             (alturaCejaDcha == "alta" || alturaCejaDcha == "media") && 
@@ -125,11 +126,37 @@ public class Personaje : MonoBehaviour
     public void getSliderCejaIzq()
     {
         float valorCejaIzq = sliderCejaIzq.value;
+        cejaIZq.transform.position = new UnityEngine.Vector3(posInicialCejaIzq.x, posInicialCejaIzq.y + valorCejaIzq*0.012f, posInicialCejaIzq.z);
+        if (valorCejaIzq > 0.55f)
+        {
+            alturaCejaIzq = "alta";
+        }
+        else if (valorCejaIzq < -0.05f)
+        {
+            alturaCejaIzq = "baja";
+        }
+        else
+        {
+            alturaCejaIzq = "media";
+        }
     }
 
         public void getSliderCejaDcha()
     {
         float valorCejaDcha = SliderCeraDcha.value;
+        cejaDcha.transform.position = new UnityEngine.Vector3(posInicialCejaDcha.x, posInicialCejaDcha.y + valorCejaDcha*0.012f, posInicialCejaDcha.z);
+        if (valorCejaDcha > 0.55f)
+        {
+            alturaCejaDcha = "alta";
+        }
+        else if (valorCejaDcha < -0.05f)
+        {
+            alturaCejaDcha = "baja";
+        }
+        else
+        {
+            alturaCejaDcha = "media";
+        }
     }
 
         public void getSliderAperturaBoca()

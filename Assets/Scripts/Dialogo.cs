@@ -35,7 +35,6 @@ public class Dialogo : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(bloqueIdentificador);
      if (escribiendoBloque == false)
         {
             //INTRODUCCIÓN
@@ -61,12 +60,12 @@ public class Dialogo : MonoBehaviour
             //BLOQUE 4
              else if  (bloqueIdentificador == 4)
              {
-                 StartCoroutine(Bloque4());
+                StartCoroutine(Bloque4());
              }
             //BLOQUE 5
              else if  (bloqueIdentificador == 5)
              {
-                 StartCoroutine(Bloque5());
+                StartCoroutine(Bloque5());
              }
 
         }
@@ -168,7 +167,7 @@ public class Dialogo : MonoBehaviour
     }
    IEnumerator Bloque2()
     {
-         escribiendoBloque = true;
+        escribiendoBloque = true;
         frase = "Últimamente estoy un poco deprimida, ya no es lo mismo sin ella… ¿No te has enterado? Hace un mes falleció mi tía abuela, pobre mujer ¡En la flor de la vida! Solo 94 años tenía…";
         yield return StartCoroutine(EscribirLento());
         frase = "Ay, siempre se van los mejores primero. De ella heredé mi tipo, ¡esta belleza es 100% natural claro! Tenía a todos los chicos del pueblo locos en su juventud... ";
@@ -235,7 +234,7 @@ public class Dialogo : MonoBehaviour
 
     IEnumerator Bloque3()
     {
-         escribiendoBloque = true;
+        escribiendoBloque = true;
         frase = "Por cierto ¿te acuerdas de X, del instituto? No te vas a creer lo que ha pasado. Resulta que el otro día estaba en el bar con unos amigos y acabó recibiendo una paliza.";
         yield return StartCoroutine(EscribirLento());
         frase = "Se ve que le dieron bien, no lo han vuelto a ver por la calle todavía.";
