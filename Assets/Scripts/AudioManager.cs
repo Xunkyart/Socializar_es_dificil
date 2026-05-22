@@ -26,7 +26,11 @@ public class AudioManager : MonoBehaviour
     public void PlaySliderSFX()
     {
         FXSource.PlayOneShot(Slider);
+
+    
+
     }
 
     
+   
 }
