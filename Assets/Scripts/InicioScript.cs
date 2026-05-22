@@ -6,16 +6,21 @@ public class InicioScript : MonoBehaviour
 {
     public GameObject panelInicio;
     public GameObject panelSetting;
+    public GameObject PanelCreditos;
+    public GameObject PanelSelectNivel;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         panelSetting.SetActive(false);
+        PanelCreditos.SetActive(false);
+        PanelSelectNivel.SetActive(false);
     }
 
     // Update is called once per frame
     void Update() { }
 
+    // Ajustes
     public void showSettings()
     {
         panelSetting.SetActive(true);
@@ -32,15 +37,53 @@ public class InicioScript : MonoBehaviour
 
     }
 
+    // Salir del juego
+
     public void exitGame()
     {
         Application.Quit();
 
     }
 
-    public void Inicio()
+    // Creditos
+
+    public void showCreditos()
     {
-        SceneManager.LoadScene("juego");
+        PanelCreditos.SetActive(true);
+
+        panelInicio.SetActive(false);
+
     }
+
+    public void exitCreditos()
+    {
+        PanelCreditos.SetActive(false);
+
+        panelInicio.SetActive(true);
+
+    }
+
+    // Selección de nivel
+
+    public void showSelectNivel()
+    {
+        PanelSelectNivel.SetActive(true);
+
+        panelInicio.SetActive(false);
+
+    }
+
+    public void exitSelectNivel()
+    {
+        PanelSelectNivel.SetActive(false);
+
+        panelInicio.SetActive(true);
+
+    }
+
+    /*public void StartLvl1()
+    {
+        SceneManager.LoadScene("juego"); IMPORTANTE CUANDO SE UNA A LA MAIN
+    } */ 
 
 }
