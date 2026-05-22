@@ -7,7 +7,7 @@ public class AudioManager : MonoBehaviour
 
     //public AudioClip
     public AudioClip Prueba;
-    
+    public AudioClip Slider;
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -22,4 +22,11 @@ public class AudioManager : MonoBehaviour
     {
         FXSource.PlayOneShot(clip);
     }
+
+    public void PlaySliderSFX()
+    {
+        FXSource.PlayOneShot(Slider);
+    }
+
+    
 }
