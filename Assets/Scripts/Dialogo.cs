@@ -17,6 +17,8 @@ public class Dialogo : MonoBehaviour
     public float exito = 0.5f;
     GameObject personajeJugador;
     string emocion;
+    bool puedoJugar = true;
+    bool playingIntro;
     //public int[] listadoFrases;
 
     void Start()
@@ -37,9 +39,23 @@ public class Dialogo : MonoBehaviour
         // Actualizar la emoción del personaje
         emocion = personajeJugador.GetComponent<Personaje>().emocion;
         Debug.Log("Emoción actual: " + emocion);
-        if (escribiendoBloque == false)
+
+        if (exito <= 0)
+        {
+            puedoJugar = false;
+            StopAllCoroutines();
+            if (playingIntro == false);
+            {
+                playingIntro = true;
+                StartCoroutine (Fail());
+            }
+        }
+
+
+        if (puedoJugar = true && escribiendoBloque == false)
         {
             //INTRODUCCIÓN
+
             if (bloqueIdentificador == 0)
             {
                 StartCoroutine(Intro());
@@ -496,18 +512,15 @@ public class Dialogo : MonoBehaviour
         escribiendoBloque = true;
         if (exito >= 0.7f)
         {
-            frase =
-                "Bueno, ya paro que se me hace tarde. ¡Me alegro de volver a verte! Tienes que venir este sábado al bar, seguro que los demás tienen ganas de ponerse al día.";
+            frase = "Bueno, ya paro que se me hace tarde. ¡Me alegro de volver a verte! Tienes que venir este sábado al bar, seguro que los demás tienen ganas de ponerse al día.";
         }
         else if (exito >= 0.4f)
         {
-            frase =
-                "Bueno, debería ir yéndome, no puedo decir que ha sido un placer volver a verte. Sigues igual de rarito que en el instituto, a ver si espabilas.";
+            frase = "Bueno, debería ir yéndome, no puedo decir que ha sido un placer volver a verte. Sigues igual de rarito que en el instituto, a ver si espabilas.";
         }
         else
         {
-            frase =
-                "Vaya, mira que hora es, mejor me voy ya. Ha estado bien ponernos al día… ya nos veremos por ahi, supongo";
+            frase = "Vaya, mira que hora es, mejor me voy ya. Ha estado bien ponernos al día… ya nos veremos por ahi, supongo";
         }
         escribiendoBloque = false;
         yield return StartCoroutine(EscribirLento());
@@ -515,6 +528,7 @@ public class Dialogo : MonoBehaviour
 
     IEnumerator Fail()
     {
+        objDialogo.text = " ";
         escribiendoBloque = true;
         if (exito <= -0.5f)
         {

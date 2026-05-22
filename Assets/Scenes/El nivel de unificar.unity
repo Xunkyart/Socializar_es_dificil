@@ -407,12 +407,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Personaje
   emocion: neutra
-  cejaIZq: {fileID: 889209998}
-  cejaDcha: {fileID: 1346313280}
+  cejaIZq: {fileID: 1346313280}
+  cejaDcha: {fileID: 889209998}
   labioInf: {fileID: 193595456}
   dientesInf: {fileID: 193595455}
-  comisuraIzq: {fileID: 193595454}
-  comisuraDcha: {fileID: 193595453}
+  comisuraIzq: {fileID: 193595453}
+  comisuraDcha: {fileID: 193595454}
   sliderCejaIzq: {fileID: 1150667554}
   SliderCeraDcha: {fileID: 1828650987}
   SliderAperturaBoca: {fileID: 689442608}
