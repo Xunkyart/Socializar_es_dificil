@@ -9,7 +9,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip Prueba;
     public AudioClip Slider;
     public AudioClip Button;
-
+    public AudioClip Shutter;
+    public AudioClip Exit;
+    public AudioClip Drag;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -36,4 +38,20 @@ public class AudioManager : MonoBehaviour
 
     }
    
+    public void PlayShutterSFX()
+    {
+        FXSource.PlayOneShot(Shutter);
+
+    }
+
+   public void PlayExitSFX()
+    {
+        FXSource.PlayOneShot(Exit);
+
+    }
+
+    public void PlayDragSFX()
+    {
+        FXSource.PlayOneShot(Drag);
+    }
 }
