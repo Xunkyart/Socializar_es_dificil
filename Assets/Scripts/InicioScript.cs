@@ -3,7 +3,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class InicioScript : MonoBehaviour
-{
+{   
+
     public GameObject panelInicio;
     public GameObject panelSetting;
     public GameObject PanelCreditos;
@@ -12,9 +13,11 @@ public class InicioScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+       
         panelSetting.SetActive(false);
         PanelCreditos.SetActive(false);
         PanelSelectNivel.SetActive(false);
+        
     }
 
     // Update is called once per frame
