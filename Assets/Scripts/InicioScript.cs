@@ -85,9 +85,11 @@ public class InicioScript : MonoBehaviour
     }
 
     // Cargar el nivel
+    /*
     public void StartLvl1()
     {
-        SceneManager.LoadScene("Cagarro");
+        SceneManager.LoadScene("Aqui va la escena de inicio de Alex");
     }  
+    */
 
 }
