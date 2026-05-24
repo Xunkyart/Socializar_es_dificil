@@ -84,9 +84,9 @@ public class InicioScript : MonoBehaviour
 
     }
 
-    /*public void StartLvl1()
+    public void StartLvl1()
     {
-        SceneManager.LoadScene("juego"); IMPORTANTE CUANDO SE UNA A LA MAIN
-    } */ 
+        SceneManager.LoadScene("Cagarro");
+    }  
 
 }

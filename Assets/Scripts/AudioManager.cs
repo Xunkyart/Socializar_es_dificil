@@ -12,6 +12,12 @@ public class AudioManager : MonoBehaviour
     public AudioClip Shutter;
     public AudioClip Exit;
     public AudioClip Drag;
+
+
+     void Awake()
+     {
+        DontDestroyOnLoad(this.gameObject);
+     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
