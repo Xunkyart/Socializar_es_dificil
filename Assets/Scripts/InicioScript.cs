@@ -84,6 +84,7 @@ public class InicioScript : MonoBehaviour
 
     }
 
+    // Cargar el nivel
     public void StartLvl1()
     {
         SceneManager.LoadScene("Cagarro");

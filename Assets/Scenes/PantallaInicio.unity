@@ -5559,6 +5559,10 @@ MonoBehaviour:
   - {fileID: 1683644431}
   - {fileID: 1960200520}
   - {fileID: 230428893}
+  start:
+  - {fileID: 1263326617}
+  - {fileID: 291967543}
+  - {fileID: 1062776637}
 --- !u!4 &1407510286
 Transform:
   m_ObjectHideFlags: 0

@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class SelectorLvlScript : MonoBehaviour
 {
-     public GameObject[] levels;
+    public GameObject[] levels;
+    public GameObject[] start;
     private int currentLevel = 0;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -18,7 +19,8 @@ public class SelectorLvlScript : MonoBehaviour
 
     }
 
-public void NextLevel()
+    // Para que funcionen las Flechitas
+    public void NextLevel()
     {
         currentLevel++;
 
@@ -30,7 +32,7 @@ public void NextLevel()
         ShowLevel();
     }
 
-     public void PreviousLevel()
+    public void PreviousLevel()
     {
         currentLevel--;
 
@@ -42,11 +44,13 @@ public void NextLevel()
         ShowLevel();
     }
 
+    // Para que se vea solo el nivel que toca
     void ShowLevel()
     {
         for (int i = 0; i < levels.Length; i++)
         {
-            levels[i].SetActive(i == currentLevel);
+            levels[i].SetActive(i == currentLevel); // muestra solo el nivel que toca
+            start[i].SetActive(i == currentLevel); // muestra solo el botón de start que toca
         }
     }
     
