@@ -245,7 +245,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 193595457}
+      - m_Target: {fileID: 980084541}
         m_TargetAssemblyTypeName: Personaje, Assembly-CSharp
         m_MethodName: getSliderComisuraDcha
         m_Mode: 1
@@ -257,171 +257,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1001 &193595451
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.7320092
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.732009
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.7320092
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.11
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.228
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -9.48
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.3285277
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.94449437
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 141.641
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-      propertyPath: m_Name
-      value: Personaje
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5658717741678651040, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5658717741678651040, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5658717741678651040, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7570456002536969217, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7570456002536969217, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7570456002536969217, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.43
-      objectReference: {fileID: 0}
-    - target: {fileID: 8112796510084269467, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8112796510084269467, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.0322
-      objectReference: {fileID: 0}
-    - target: {fileID: 8112796510084269467, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 193595457}
-  m_SourcePrefab: {fileID: 100100000, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
---- !u!1 &193595452 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-  m_PrefabInstance: {fileID: 193595451}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &193595453 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2493318370374977521, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-  m_PrefabInstance: {fileID: 193595451}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &193595454 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -5752718749133859300, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-  m_PrefabInstance: {fileID: 193595451}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &193595455 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -5929017071037796050, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-  m_PrefabInstance: {fileID: 193595451}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &193595456 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 598077067424948990, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-  m_PrefabInstance: {fileID: 193595451}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &193595457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 193595452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff1c298148261c74d9a56e32f48ec378, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Personaje
-  emocion: neutra
-  cejaIZq: {fileID: 889209998}
-  cejaDcha: {fileID: 1346313280}
-  labioInf: {fileID: 193595456}
-  dientesInf: {fileID: 193595455}
-  comisuraIzq: {fileID: 193595454}
-  comisuraDcha: {fileID: 193595453}
-  sliderCejaIzq: {fileID: 1150667554}
-  SliderCeraDcha: {fileID: 1828650987}
-  SliderAperturaBoca: {fileID: 689442608}
-  SliderComisuraIzq: {fileID: 212748114}
-  SliderComisuraDcha: {fileID: 126293864}
 --- !u!1 &212748112
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,7 +347,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 193595457}
+      - m_Target: {fileID: 980084541}
         m_TargetAssemblyTypeName: Personaje, Assembly-CSharp
         m_MethodName: getSliderComisuraIzq
         m_Mode: 1
@@ -1250,7 +1085,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 193595457}
+      - m_Target: {fileID: 980084541}
         m_TargetAssemblyTypeName: Personaje, Assembly-CSharp
         m_MethodName: getSliderAperturaBoca
         m_Mode: 1
@@ -1533,11 +1368,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &889209998 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1452209144401388378, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-  m_PrefabInstance: {fileID: 193595451}
+--- !u!114 &980084541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105307601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1c298148261c74d9a56e32f48ec378, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Personaje
+  emocion: neutra
+  cejaIZq: {fileID: 1105307607}
+  cejaDcha: {fileID: 1105307606}
+  labioInf: {fileID: 1105307605}
+  dientesInf: {fileID: 1105307604}
+  comisuraIzq: {fileID: 1105307603}
+  comisuraDcha: {fileID: 1105307602}
+  sliderCejaIzq: {fileID: 1150667554}
+  SliderCeraDcha: {fileID: 1828650987}
+  SliderAperturaBoca: {fileID: 689442608}
+  SliderComisuraIzq: {fileID: 212748114}
+  SliderComisuraDcha: {fileID: 126293864}
 --- !u!1 &981593981
 GameObject:
   m_ObjectHideFlags: 0
@@ -1868,7 +1722,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b10f3a24d0a9d0a42bac060976673b43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.228
+      value: -0.196
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b10f3a24d0a9d0a42bac060976673b43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1948,7 +1802,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 79b2eab3a5f5dcc459e93e673ddb444e, type: 2}
     - target: {fileID: 919132149155446097, guid: b10f3a24d0a9d0a42bac060976673b43, type: 3}
       propertyPath: m_Name
-      value: ChicoAutistaRig2
+      value: Personaje
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b10f3a24d0a9d0a42bac060976673b43, type: 3}
       propertyPath: m_TagString
@@ -1969,8 +1823,46 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b10f3a24d0a9d0a42bac060976673b43, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 980084541}
   m_SourcePrefab: {fileID: 100100000, guid: b10f3a24d0a9d0a42bac060976673b43, type: 3}
+--- !u!1 &1105307601 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b10f3a24d0a9d0a42bac060976673b43, type: 3}
+  m_PrefabInstance: {fileID: 1105307600}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1105307602 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2493318370374977521, guid: b10f3a24d0a9d0a42bac060976673b43, type: 3}
+  m_PrefabInstance: {fileID: 1105307600}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1105307603 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5752718749133859300, guid: b10f3a24d0a9d0a42bac060976673b43, type: 3}
+  m_PrefabInstance: {fileID: 1105307600}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1105307604 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5929017071037796050, guid: b10f3a24d0a9d0a42bac060976673b43, type: 3}
+  m_PrefabInstance: {fileID: 1105307600}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1105307605 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 598077067424948990, guid: b10f3a24d0a9d0a42bac060976673b43, type: 3}
+  m_PrefabInstance: {fileID: 1105307600}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1105307606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2749019352549534297, guid: b10f3a24d0a9d0a42bac060976673b43, type: 3}
+  m_PrefabInstance: {fileID: 1105307600}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1105307607 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1452209144401388378, guid: b10f3a24d0a9d0a42bac060976673b43, type: 3}
+  m_PrefabInstance: {fileID: 1105307600}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1150667552
 GameObject:
   m_ObjectHideFlags: 0
@@ -2061,7 +1953,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 193595457}
+      - m_Target: {fileID: 980084541}
         m_TargetAssemblyTypeName: Personaje, Assembly-CSharp
         m_MethodName: getSliderCejaIzq
         m_Mode: 1
@@ -2261,11 +2153,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Dialogo
   frase: Hola buenas tardes
   exito: 0.5
---- !u!1 &1346313280 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -2749019352549534297, guid: 19698cacbbb773043a8731e7e6ed2cca, type: 3}
-  m_PrefabInstance: {fileID: 193595451}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1381503710
 GameObject:
   m_ObjectHideFlags: 0
@@ -2725,7 +2612,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 193595457}
+      - m_Target: {fileID: 980084541}
         m_TargetAssemblyTypeName: Personaje, Assembly-CSharp
         m_MethodName: getSliderCejaDcha
         m_Mode: 1
@@ -3234,5 +3121,4 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 2091421248}
   - {fileID: 1910464108}
-  - {fileID: 193595451}
   - {fileID: 1105307600}
