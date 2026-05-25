@@ -114,7 +114,7 @@ public class Personaje : MonoBehaviour
             posInicialCejaIzq.y + valorCejaIzq * 0.012f,
             posInicialCejaIzq.z
         );
-        if (valorCejaIzq > 0.55f)
+        if (valorCejaIzq > 0.44f)
         {
             alturaCejaIzq = "alta";
         }
@@ -136,7 +136,7 @@ public class Personaje : MonoBehaviour
             posInicialCejaDcha.y + valorCejaDcha * 0.012f,
             posInicialCejaDcha.z
         );
-        if (valorCejaDcha > 0.55f)
+        if (valorCejaDcha > 0.44f)
         {
             alturaCejaDcha = "alta";
         }
@@ -163,7 +163,7 @@ public class Personaje : MonoBehaviour
             posInicialDientesInf.y + valorAperturaBoca * 0.02f,
             posInicialDientesInf.z
         );
-        if (valorAperturaBoca > -0.3f)
+        if (valorAperturaBoca > -0.5f)
         {
             aperturaBoca = "cerrada";
         }
