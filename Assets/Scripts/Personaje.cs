@@ -20,7 +20,6 @@ public class Personaje : MonoBehaviour
     public GameObject dientesInf;
     public GameObject comisuraIzq;
     public GameObject comisuraDcha;
-    public GameObject labioSup;
 
     //SLIDERS
     public Slider sliderCejaIzq;
@@ -45,7 +44,6 @@ public class Personaje : MonoBehaviour
     UnityEngine.Vector3 posInicialDientesInf;
     UnityEngine.Vector3 posInicialComisuraIzq;
     UnityEngine.Vector3 posInicialComisuraDcha;
-    UnityEngine.Vector3 posInicialLabioSup;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -56,7 +54,6 @@ public class Personaje : MonoBehaviour
         posInicialDientesInf = dientesInf.transform.position;
         posInicialComisuraIzq = comisuraIzq.transform.position;
         posInicialComisuraDcha = comisuraDcha.transform.position;
-        posInicialLabioSup = labioSup.transform.position;
     }
 
     // Update is called once per frame
@@ -185,12 +182,6 @@ public class Personaje : MonoBehaviour
             posInicialComisuraIzq.z
         );
 
-        labioSup.transform.position = new UnityEngine.Vector3(
-            posInicialLabioSup.x,
-            posInicialLabioSup.y + valorComisuraIzq * 0.008f,
-            posInicialLabioSup.z
-        );
-
         if (valorComisuraIzq > 0.55f)
         {
             alturaComisuraIzq = "alta";
@@ -212,12 +203,6 @@ public class Personaje : MonoBehaviour
             posInicialComisuraDcha.x,
             posInicialComisuraDcha.y + valorComisuraDcha * 0.012f,
             posInicialComisuraDcha.z
-        );
-
-        labioSup.transform.position = new UnityEngine.Vector3(
-            posInicialLabioSup.x,
-            posInicialLabioSup.y + valorComisuraDcha * 0.008f,
-            posInicialLabioSup.z
         );
         
         if (valorComisuraDcha > 0.55f)
