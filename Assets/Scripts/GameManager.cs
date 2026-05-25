@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,9 +14,13 @@ public class GameManager : MonoBehaviour
     {
         
     }
+
+    public void volverInicio()
+    {
+        SceneManager.LoadScene("PantallaInicio");
+    }  
 }
 /*cuando llegue a casa: 
-Poner botones de volver a jugar y salir del juego
 Mirar como conectar al resto del juego
 
 Duplicar script de dialogo para hacer pruebas con lo que hice ayer y con lo de ahora

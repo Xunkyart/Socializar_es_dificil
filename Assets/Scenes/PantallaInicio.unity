@@ -4910,7 +4910,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1960506354}
         m_TargetAssemblyTypeName: InicioScript, Assembly-CSharp
-        m_MethodName: StartLvl1
+        m_MethodName: startLvl1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
