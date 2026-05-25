@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Dialogo : MonoBehaviour
 {
+    public GameObject SlidersUI;
     TextMeshProUGUI objDialogo;
     public string frase = "";
     float velocidadEscribir = 0.05f;
@@ -17,11 +18,12 @@ public class Dialogo : MonoBehaviour
     public float exito = 0.5f;
     GameObject personajeJugador;
     string emocion;
-    public int bloquesPartida = 5; //Incluye la introducción, no incluye el outro ni el fail.
+    int bloquesPartida = 5; //Incluye la introducción, no incluye el outro ni el fail.
     //public int[] listadoFrases;
 
     void Start()
     {
+        SlidersUI.SetActive(false);
         objDialogo = this.GetComponent<TextMeshProUGUI>();
         objDialogo.text = " ";
         personajeJugador = GameObject.FindWithTag("Player");
@@ -37,7 +39,6 @@ public class Dialogo : MonoBehaviour
     {
         // Actualizar la emoción del personaje
         emocion = personajeJugador.GetComponent<Personaje>().emocion;
-        Debug.Log("Emoción actual: " + emocion);
         if (escribiendoBloque == false && bloquesPartida > 0)
         {
             //INTRODUCCIÓN
@@ -73,8 +74,14 @@ public class Dialogo : MonoBehaviour
         }
     }
 
+    IEnumerator MostrarSliders()
+    {
+        yield return new WaitForSeconds(22.0f);
+        SlidersUI.SetActive(true);
+    }
     IEnumerator Intro()
     {
+        StartCoroutine(MostrarSliders());
         escribiendoBloque = true;
         yield return new WaitForSeconds(8.0f);
         frase =
