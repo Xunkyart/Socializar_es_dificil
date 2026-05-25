@@ -75,6 +75,7 @@ public class Dialogo : MonoBehaviour
     IEnumerator Intro()
     {
         escribiendoBloque = true;
+        yield return new WaitForSeconds(8.0f);
         frase =
             "¡Ei! ¿Eres tú? Madre mía, ¡cuánto tiempo sin verte! Desde el instituto, ¿verdad? No has cambiado nada, tienes exactamente la misma cara que cuando teníamos 15 años.";
         yield return StartCoroutine(EscribirLento());
