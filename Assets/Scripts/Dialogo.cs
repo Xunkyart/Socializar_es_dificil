@@ -109,7 +109,7 @@ public class Dialogo : MonoBehaviour
             StartFail();
             return;
         }
-        if (!haTerminado && bloquesDisponibles.Count == 3)
+        if (!haTerminado && bloquesDisponibles.Count == 1)
         {
             haTerminado = true;
             PararDialogo();
