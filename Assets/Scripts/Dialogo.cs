@@ -17,6 +17,7 @@ public class Dialogo : MonoBehaviour
     public float exito = 0.5f;
     GameObject personajeJugador;
     string emocion;
+    public int bloquesPartida = 5; //Incluye la introducción, no incluye el outro ni el fail.
     //public int[] listadoFrases;
 
     void Start()
@@ -37,7 +38,7 @@ public class Dialogo : MonoBehaviour
         // Actualizar la emoción del personaje
         emocion = personajeJugador.GetComponent<Personaje>().emocion;
         Debug.Log("Emoción actual: " + emocion);
-        if (escribiendoBloque == false)
+        if (escribiendoBloque == false && bloquesPartida > 0)
         {
             //INTRODUCCIÓN
             if (bloqueIdentificador == 0)
@@ -65,7 +66,7 @@ public class Dialogo : MonoBehaviour
                 StartCoroutine(Bloque4());
             }
             //BLOQUE 5
-            else if (bloqueIdentificador == 5)
+            else if (bloqueIdentificador == 2)
             {
                 StartCoroutine(Bloque5());
             }
@@ -275,7 +276,7 @@ public class Dialogo : MonoBehaviour
             "Mi novio intentó pedirme matrimonio hace unos años, pero lo hizo con un anillo de lo más básico, ¡Ni hablar! ";
         yield return StartCoroutine(EscribirLento());
         frase =
-            "Una mujer como yo necesita un diamante tan brillante como ella, así que le hice volver a preguntarme cuándo tuviese el valor de comprar uno.";
+            "Una mujer como yo necesita un diamante tan brillante como ella, así que le hice volver a preguntarme cuando tuviese el valor de comprar uno.";
         yield return StartCoroutine(EscribirLento());
         if (emocion == "neutral")
         {
@@ -510,8 +511,9 @@ public class Dialogo : MonoBehaviour
             frase =
                 "Vaya, mira que hora es, mejor me voy ya. Ha estado bien ponernos al día… ya nos veremos por ahi, supongo";
         }
-        escribiendoBloque = false;
         yield return StartCoroutine(EscribirLento());
+        StopAllCoroutines();
+        escribiendoBloque = false;
     }
 
     IEnumerator Fail()
@@ -521,8 +523,8 @@ public class Dialogo : MonoBehaviour
         {
             frase = "¡Menudo payaso! Es imposible hablar contigo. Hasta nunca.";
         }
-        escribiendoBloque = false;
         yield return StartCoroutine(EscribirLento());
+        escribiendoBloque = false;
     }
 
     //ESCRIBE "FRASE" EN PANTALLA LETRA POR LETRA, ESPERA tiempoEntreFrases SEGUNDOS Y BORRA EL TEXTO.
@@ -554,10 +556,20 @@ public class Dialogo : MonoBehaviour
 
         //Elige un bloque al azar de la lista, lo asigna como bloque elegido y lo borra de la lista.
         bloqueIdentificador = Random.Range(minListaBloques, maxListaBloques);
-        if (bloquesDisponibles.Contains(bloqueIdentificador))
+
+        //Restamos uno de los bloques totales de la partida
+        bloquesPartida--;
+        
+        if (bloquesPartida <= 0)
         {
+            StartCoroutine(Outro());
+        }
+        else if (bloquesDisponibles.Contains(bloqueIdentificador))
+        {
+            //Asignamos el bloque elegido como bloque actual y lo borramos de la lista para que no se repita
             bloquesDisponibles.Remove(bloqueIdentificador);
         }
+        //No debería poder pasar pero por seguridad
         else
         {
             laRuleta();

@@ -7140,6 +7140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Dialogo
   frase: Hola buenas tardes
   exito: 0.5
+  bloquesPartida: 1
 --- !u!114 &467319354
 MonoBehaviour:
   m_ObjectHideFlags: 0
