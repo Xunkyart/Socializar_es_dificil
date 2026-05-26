@@ -1,8 +1,14 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Modello 3D/MaterialesTexturas/BasePelo.mat.meta
+guid: 5dadb2bf0a5e33246a836962156c1aa1
+NativeFormatImporter:
+========
 guid: 4b245121014ea43119d6dac8faa3e821
 folderAsset: yes
 DefaultImporter:
+>>>>>>>> origin/main:Assets/Supermercado.meta
   externalObjects: {}
+  mainObjectFileID: 2100000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
