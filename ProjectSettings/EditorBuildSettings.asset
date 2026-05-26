@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/PantallaInicio.unity
+    guid: ab1c00b529adcd1479d6190c3f587e6e
+  - enabled: 1
+    path: Assets/Scenes/Nivel_interfaces_FinDelJuego.unity
+    guid: 2a9482d8555eb894c879956a49e349c5
+  - enabled: 0
     path: Assets/Scenes/El nivel de unificar.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
