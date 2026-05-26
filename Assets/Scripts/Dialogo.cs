@@ -8,7 +8,7 @@ public class Dialogo : MonoBehaviour
     public GameObject SlidersUI;
     TextMeshProUGUI objDialogo;
     public string frase = "";
-    float velocidadEscribir = 0.05f;
+    float velocidadEscribir = 0.035f;
     float tiempoEntreFrases = 2.0f;
     private List<int> bloquesDisponibles = new List<int>();
     int bloqueIdentificador = 0;
@@ -18,7 +18,7 @@ public class Dialogo : MonoBehaviour
     public float exito = 0.5f;
     GameObject personajeJugador;
     string emocion;
-    int bloquesPartida = 5; //Incluye la introducción, no incluye el outro ni el fail.
+    public int bloquesPartida = 5; //Incluye la introducción, no incluye el outro ni el fail.
     //public int[] listadoFrases;
 
      //Referencia al GameManager para activar las interfaces finales
@@ -75,7 +75,7 @@ public class Dialogo : MonoBehaviour
                 StartCoroutine(Bloque4());
             }
             //BLOQUE 5
-            else if (bloqueIdentificador == 2)
+            else if (bloqueIdentificador == 5)
             {
                 StartCoroutine(Bloque5());
             }
@@ -119,7 +119,7 @@ public class Dialogo : MonoBehaviour
 
     IEnumerator MostrarSliders()
     {
-        yield return new WaitForSeconds(22.0f);
+        yield return new WaitForSeconds(20.0f);
         SlidersUI.SetActive(true);
     }
     IEnumerator Intro()

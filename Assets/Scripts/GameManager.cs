@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     {
         Interfaz_FinalBueno.SetActive(false);
         Interfaz_FinalNeutral.SetActive(false);
+        Interfaz_FinalMalo.SetActive(false);
         Interfaz_Base.SetActive(true);
     }
 
