@@ -23,7 +23,7 @@ public class Personaje : MonoBehaviour
 
     //SLIDERS
     public Slider sliderCejaIzq;
-    public Slider SliderCeraDcha;
+    public Slider SliderCejaDcha;
     public Slider SliderAperturaBoca;
     public Slider SliderComisuraIzq;
     public Slider SliderComisuraDcha;
@@ -113,7 +113,7 @@ public class Personaje : MonoBehaviour
             posInicialCejaIzq.y + valorCejaIzq * 0.012f,
             posInicialCejaIzq.z
         );
-        if (valorCejaIzq > 0.55f)
+        if (valorCejaIzq > 0.44f)
         {
             alturaCejaIzq = "alta";
         }
@@ -129,13 +129,13 @@ public class Personaje : MonoBehaviour
 
     public void getSliderCejaDcha()
     {
-        float valorCejaDcha = SliderCeraDcha.value;
+        float valorCejaDcha = SliderCejaDcha.value;
         cejaDcha.transform.position = new UnityEngine.Vector3(
             posInicialCejaDcha.x,
             posInicialCejaDcha.y + valorCejaDcha * 0.012f,
             posInicialCejaDcha.z
         );
-        if (valorCejaDcha > 0.55f)
+        if (valorCejaDcha > 0.44f)
         {
             alturaCejaDcha = "alta";
         }

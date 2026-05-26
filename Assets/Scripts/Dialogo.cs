@@ -21,6 +21,11 @@ public class Dialogo : MonoBehaviour
     int bloquesPartida = 5; //Incluye la introducción, no incluye el outro ni el fail.
     //public int[] listadoFrases;
 
+     //Referencia al GameManager para activar las interfaces finales
+    public GameManager gameManager;
+    bool haPerdido = false;
+    bool haTerminado = false;
+
     void Start()
     {
         SlidersUI.SetActive(false);
@@ -37,6 +42,9 @@ public class Dialogo : MonoBehaviour
 
     void Update()
     {
+        //para que el dialogo no haga cosas raras si se ha perdido o ha terminado el juego
+        if (haPerdido || haTerminado) return;
+
         // Actualizar la emoción del personaje
         emocion = personajeJugador.GetComponent<Personaje>().emocion;
         if (escribiendoBloque == false && bloquesPartida > 0)
@@ -71,6 +79,41 @@ public class Dialogo : MonoBehaviour
             {
                 StartCoroutine(Bloque5());
             }
+        }
+
+        ComprobarEstadoFinal();
+    }
+    // Parar las corrutinas y que salga la outro o el fail
+    public void PararDialogo()
+    {
+        StopAllCoroutines();
+        escribiendoBloque = false;
+    }
+
+    public void StartOutro()
+    {
+        StartCoroutine(Outro());
+    }
+
+    public void StartFail()
+    {
+        StartCoroutine(Fail());
+    }
+
+    void ComprobarEstadoFinal()
+    {
+        if (!haPerdido && exito < 0f)
+        {
+            haPerdido = true;
+            PararDialogo();
+            StartFail();
+            return;
+        }
+        if (!haTerminado && bloquesDisponibles.Count == 1)
+        {
+            haTerminado = true;
+            PararDialogo();
+            StartOutro();
         }
     }
 
@@ -521,6 +564,15 @@ public class Dialogo : MonoBehaviour
         yield return StartCoroutine(EscribirLento());
         StopAllCoroutines();
         escribiendoBloque = false;
+
+        if (exito >= 0.7f)
+        {
+            gameManager.ActivarInterfazFinalBueno();
+        }
+        else if (exito >= 0.4f)
+        {
+            gameManager.ActivarInterfazFinalNeutral();
+        }
     }
 
     IEnumerator Fail()
@@ -532,6 +584,11 @@ public class Dialogo : MonoBehaviour
         }
         yield return StartCoroutine(EscribirLento());
         escribiendoBloque = false;
+
+        if (exito <= -0.5f)
+        {
+            gameManager.ActivarInterfazFinalMalo();
+        }
     }
 
     //ESCRIBE "FRASE" EN PANTALLA LETRA POR LETRA, ESPERA tiempoEntreFrases SEGUNDOS Y BORRA EL TEXTO.
