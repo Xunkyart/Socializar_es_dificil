@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Aniamciones.meta
+guid: bfb08fad3ab896f4098b696d60a38cf0
+folderAsset: yes
+DefaultImporter:
+========
 guid: 197a14f4c4bdd1c4abe868828b076a83
 NativeFormatImporter:
+>>>>>>>> main:Assets/Sonidos/AudioMixer.mixer.meta
   externalObjects: {}
   mainObjectFileID: 24100000
   userData: 

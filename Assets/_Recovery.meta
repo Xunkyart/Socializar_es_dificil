@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/_Recovery.meta
 guid: c63d0e3ee529ac849a41b4a566ab756f
+========
+guid: 5794c6255ed6fe84d94c5b5ef919723c
+>>>>>>>> origin/main:Assets/IMAGENES/Intro.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
