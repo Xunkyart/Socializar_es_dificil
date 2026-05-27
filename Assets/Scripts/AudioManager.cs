@@ -5,6 +5,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource FXSource;
 
+    public static AudioManager instance;
+
     //public AudioClip
     public AudioClip Fondo;
     public AudioClip Slider;
@@ -12,14 +14,24 @@ public class AudioManager : MonoBehaviour
     public AudioClip Shutter;
     public AudioClip Exit;
     public AudioClip Drag;
-    public AudioClip Super;
-    public AudioClip Win;
+     public AudioClip Win;
     public AudioClip Lose;  
 
+     
      void Awake()
-     {
-        DontDestroyOnLoad(this.gameObject);
-     }
+    {
+        // 1. Check if an instance already exists
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject); // 2. Keep this one alive
+        }
+        else
+        {
+            // 3. Duplicate found! Destroy the new one immediately.
+            Destroy(gameObject);
+        }
+    }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -63,3 +75,4 @@ public class AudioManager : MonoBehaviour
         FXSource.PlayOneShot(Drag);
     }
 }
+   

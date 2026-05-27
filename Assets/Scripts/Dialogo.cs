@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Dialogo : MonoBehaviour
 {
+    
     public GameObject SlidersUI;
     TextMeshProUGUI objDialogo;
     public string frase = "";
@@ -26,14 +27,9 @@ public class Dialogo : MonoBehaviour
     bool haPerdido = false;
     bool haTerminado = false;
 
-    AudioManager audioManager;
+   
 
-
-     private void Awake()
-    {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-    }
-
+     
 
     void Start()
     {
@@ -97,6 +93,7 @@ public class Dialogo : MonoBehaviour
     {
         StopAllCoroutines();
         escribiendoBloque = false;
+       
     }
 
     public void StartOutro()
@@ -134,6 +131,7 @@ public class Dialogo : MonoBehaviour
     }
     IEnumerator Intro()
     {
+       
         StartCoroutine(MostrarSliders());
         escribiendoBloque = true;
         yield return new WaitForSeconds(8.0f);
