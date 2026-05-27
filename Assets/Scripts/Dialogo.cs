@@ -26,7 +26,7 @@ public class Dialogo : MonoBehaviour
     public GameManager gameManager;
     bool haPerdido = false;
     bool haTerminado = false;
-
+    public GameObject subrayado;
    
 
      
@@ -37,6 +37,7 @@ public class Dialogo : MonoBehaviour
         objDialogo = this.GetComponent<TextMeshProUGUI>();
         objDialogo.text = " ";
         personajeJugador = GameObject.FindWithTag("Player");
+        subrayado.SetActive(false);
 
         //Rellenamos la lista de bloques. El mínimo se incluye, el máximo no. El 0 es la introducción, así que no se incluye.
         for (int i = minListaBloques; i < maxListaBloques; i++)
@@ -135,6 +136,7 @@ public class Dialogo : MonoBehaviour
         StartCoroutine(MostrarSliders());
         escribiendoBloque = true;
         yield return new WaitForSeconds(8.0f);
+        subrayado.SetActive(true);
         frase =
             "¡Ei! ¿Eres tú? Madre mía, ¡cuánto tiempo sin verte! Desde el instituto, ¿verdad? No has cambiado nada, tienes exactamente la misma cara que cuando teníamos 15 años.";
         yield return StartCoroutine(EscribirLento());
