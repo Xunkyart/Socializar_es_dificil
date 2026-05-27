@@ -1,43 +1,18 @@
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class FXManager : MonoBehaviour
 {
-    [SerializeField] AudioSource musicSource;
-    [SerializeField] AudioSource FXSource;
-
-    public static AudioManager instance;
-
-    //public AudioClip
-    public AudioClip Fondo;
-    public AudioClip Slider;
+    [SerializeField] AudioSource FXSource; public AudioClip Slider;
     public AudioClip Button;
     public AudioClip Shutter;
     public AudioClip Exit;
     public AudioClip Drag;
-     public AudioClip Win;
-    public AudioClip Lose;  
-
-     
-     void Awake()
-    {
-        // 1. Check if an instance already exists
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject); // 2. Keep this one alive
-        }
-        else
-        {
-            // 3. Duplicate found! Destroy the new one immediately.
-            Destroy(gameObject);
-        }
-    }
-    
+    public AudioClip Win;
+    public AudioClip Loss;  
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        musicSource.clip = Fondo;
-        musicSource.Play();
+        
     }
 
     // Update is called once per frame
@@ -75,4 +50,3 @@ public class AudioManager : MonoBehaviour
         FXSource.PlayOneShot(Drag);
     }
 }
-   
