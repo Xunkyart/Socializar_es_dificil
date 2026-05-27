@@ -266,28 +266,28 @@ public class Dialogo : MonoBehaviour
         if (emocion == "neutral")
         {
             frase = "Pero bueno, cambiemos de tema. Que veo que no te importa mucho";
-            exito -= 0.0f;
+            exito -= 0.2f;
         }
         else if (emocion == "feliz")
         {
             frase = "Cualquiera diría que estás del lado de los cocodrilos";
-            exito -= 0.0f;
+            exito -= 0.3f;
         }
         else if (emocion == "enfadado")
         {
             frase =
                 "Debería haber más control en esos sitios! Yo voto por que se deshagan de los cocodrilos";
-            exito += 0.0f;
+            exito += 0.1f;
         }
         else if (emocion == "triste")
         {
             frase = "Aún así una ceremonia muy bonita, deberías haberlo visto";
-            exito += 0.0f;
+            exito += 0.2f;
         }
         else if (emocion == "sorprendido")
         {
             frase = "¿Qué? ¿Qué por ser mayor crees que no podía tener aventuras?";
-            exito -= 0.0f;
+            exito += 0.1f;
         }
         yield return StartCoroutine(EscribirLento());
         laRuleta();
@@ -298,34 +298,34 @@ public class Dialogo : MonoBehaviour
     {
         escribiendoBloque = true;
         frase =
-            "Por cierto ¿te acuerdas de X, del instituto? No te vas a creer lo que ha pasado. Resulta que el otro día estaba en el bar con unos amigos y acabó recibiendo una paliza.";
+            "Por cierto ¿te acuerdas de Cristina, del instituto? No te vas a creer lo que ha pasado. Resulta que el otro día estaba en el bar con unos amigos y acabó recibiendo una paliza.";
         yield return StartCoroutine(EscribirLento());
         frase = "Se ve que le dieron bien, no lo han vuelto a ver por la calle todavía.";
         yield return StartCoroutine(EscribirLento());
         if (emocion == "neutral")
         {
             frase = "¿No te alegras ni un poco? Sigue siendo tan idiota como antes";
-            exito -= 0.0f;
+            exito -= 0.3f;
         }
         else if (emocion == "feliz")
         {
             frase = "Se lo tiene buscado, en el instituto ya era un idiota que solo buscaba peleas";
-            exito += 0.0f;
+            exito += 0.3f;
         }
         else if (emocion == "enfadado")
         {
             frase = "En mi opinión le deberían haber dado aún más fuerte, se lo tiene ganado";
-            exito -= 0.0f;
+            exito -= 0.2f;
         }
         else if (emocion == "triste")
         {
             frase = "¿A qué viene esa cara? ¿No se burlaba de ti en el colegio?";
-            exito -= 0.0f;
+            exito -= 0.1f;
         }
         else if (emocion == "sorprendido")
         {
             frase = "No se como te sorprende, si lleva siendo toda la vida así";
-            exito += 0.0f;
+            exito += 0.2f;
         }
         yield return StartCoroutine(EscribirLento());
         frase = "Aunque bueno, lo que tiene de tonto también lo tiene de guapo, menudo hombre… ";
@@ -341,27 +341,27 @@ public class Dialogo : MonoBehaviour
         if (emocion == "neutral")
         {
             frase = "Me entiendes ¿verdad? ¿Cómo pensaba que me rebajase a un nivel tan bajo?";
-            exito += 0.0f;
+            exito += 0.2f;
         }
         else if (emocion == "feliz")
         {
             frase = "Sabía que me darías la razón, tu sí que sabes reconocer lo mucho que merezco";
-            exito += 0.0f;
+            exito += 0.3f;
         }
         else if (emocion == "enfadado")
         {
             frase = "No hace falta que te pongas celoso, no eres para nada mi tipo";
-            exito -= 0.0f;
+            exito -= 0.2f;
         }
         else if (emocion == "triste")
         {
             frase = "¿Qué? ¿Triste por haber perdido tu oportunidad conmigo";
-            exito -= 0.0f;
+            exito -= 0.2f;
         }
         else if (emocion == "sorprendido")
         {
             frase = "No sé por qué te extraña tanto, soy una mujer que sabe lo que vale";
-            exito -= 0.0f;
+            exito -= 0.2f;
         }
         yield return StartCoroutine(EscribirLento());
         frase =
@@ -374,28 +374,28 @@ public class Dialogo : MonoBehaviour
         {
             frase =
                 "Bueeeeno puede que tenga más defectos que la mayoría, pero también tiene más dinero que la mayoría";
-            exito -= 0.0f;
+            exito -= 0.1f;
         }
         else if (emocion == "feliz")
         {
             frase = "¿Ves como ya no es el mismo que en el instituto?";
-            exito += 0.0f;
+            exito += 0.2f;
         }
         else if (emocion == "enfadado")
         {
             frase =
                 "No sabía que te habías vuelto tan activista, el tiempo fuera de la ciudad te ha cambiado…";
-            exito -= 0.0f;
+            exito -= 0.2f;
         }
         else if (emocion == "triste")
         {
             frase = "¿Todavía te molesta lo del instituto? ¡Pero si fue hace años!";
-            exito -= 0.0f;
+            exito -= 0.3f;
         }
         else if (emocion == "sorprendido")
         {
             frase = "No hay que ser moralistas, todos tenemos nuestras taras";
-            exito -= 0.0f;
+            exito -= 0.1f;
         }
         yield return StartCoroutine(EscribirLento());
         laRuleta();
@@ -413,27 +413,27 @@ public class Dialogo : MonoBehaviour
         if (emocion == "neutral")
         {
             frase = "No te molesta? Esto nos afecta a todos eh";
-            exito -= 0.0f;
+            exito -= 0.1f;
         }
         else if (emocion == "feliz")
         {
             frase = "Muy contento te veo para estar trabajando por debajo del sueldo mínimo";
-            exito -= 0.0f;
+            exito -= 0.1f;
         }
         else if (emocion == "enfadado")
         {
             frase = "Es indignante, cómo esperan que la gente viva así? ";
-            exito += 0.0f;
+            exito += 0.3f;
         }
         else if (emocion == "triste")
         {
             frase = "Alegra esa cara, seguro que los bancos de comida aceptan a pobretones como tú";
-            exito -= 0.0f;
+            exito += 0.1f;
         }
         else if (emocion == "sorprendido")
         {
             frase = "Es indignante, cómo esperan que la gente viva así?";
-            exito += 0.0f;
+            exito += 0.2f;
         }
         yield return StartCoroutine(EscribirLento());
         frase =
@@ -446,29 +446,29 @@ public class Dialogo : MonoBehaviour
         {
             frase =
                 "No es que lo diga por tí, eh? Aunque visto lo visto tu tampoco te has esforzado mucho en la vida";
-            exito -= 0.0f;
+            exito -= 0.1f;
         }
         else if (emocion == "feliz")
         {
             frase =
                 " ¡Por fin alguien reconoce mi trabajo duro! Me costó mucho conseguir que me enchufaran en la empresa";
-            exito += 0.0f;
+            exito += 0.3f;
         }
         else if (emocion == "enfadado")
         {
             frase = "¿Qué? No sabía que tu también eras uno de esos rojos";
-            exito -= 0.0f;
+            exito -= 0.3f;
         }
         else if (emocion == "triste")
         {
             frase =
-                "¿Te sientes ofendido? Menuda generación se està quedando, todos unos sensibles";
-            exito -= 0.0f;
+                "¿Te sientes ofendido? Menuda generación se está quedando, todos unos sensibles";
+            exito -= 0.2f;
         }
         else if (emocion == "sorprendido")
         {
             frase = "¿No estás de acuerdo? No me digas que eres un alternativo de esos";
-            exito -= 0.0f;
+            exito -= 0.1f;
         }
         yield return StartCoroutine(EscribirLento());
         laRuleta();
@@ -490,33 +490,33 @@ public class Dialogo : MonoBehaviour
         {
             frase =
                 "No sabía que eras demasiado superior como para interesarte en los asuntos del pueblo";
-            exito -= 0.0f;
+            exito -= 0.1f;
         }
         else if (emocion == "feliz")
         {
             frase = "¡Al fin pasa algo interesante en este pueblucho!";
-            exito += 0.0f;
+            exito += 0.3f;
         }
         else if (emocion == "enfadado")
         {
             frase = "No sabía que le dabas tanta importancia a los dramas tontos de pueblo";
-            exito -= 0.0f;
+            exito -= 0.1f;
         }
         else if (emocion == "triste")
         {
             frase = "Venga hombre, seguro que no es para tanto";
-            exito -= 0.0f;
+            exito += 0.1f;
         }
         else if (emocion == "sorprendido")
         {
             frase = "Emocionante, verdad? Dicen que ha llegado a haber peleas físicas…";
-            exito += 0.0f;
+            exito += 0.2f;
         }
         yield return StartCoroutine(EscribirLento());
         frase =
             "Bueno, esto seguro que te sorprende. Resulta que los presidentes de ambos clubes ¡Están casados! ";
         yield return StartCoroutine(EscribirLento());
-        frase = "Menudo ambiente tiene que haber en esa casa… Són los padres de Y, ¿la recuerdas?";
+        frase = "Menudo ambiente tiene que haber en esa casa… Són los padres de Susana, ¿la recuerdas?";
         yield return StartCoroutine(EscribirLento());
         frase =
             "Voy con ella a pilates y dice que la cosa está desmadrándose, aunque mi teoría es que es todo una farsa para publicitar los eventos.";
@@ -524,29 +524,29 @@ public class Dialogo : MonoBehaviour
         if (emocion == "neutral")
         {
             frase =
-                "e estoy contando información altamente secreta, podrías al menos fingir un poco de emoción";
-            exito -= 0.0f;
+                "Te estoy contando información altamente secreta, podrías al menos fingir un poco de emoción";
+            exito -= 0.1f;
         }
         else if (emocion == "feliz")
         {
             frase = "Tu también lo crees, ¿verdad? Es una estrategia infalible";
-            exito += 0.0f;
+            exito += 0.3f;
         }
         else if (emocion == "enfadado")
         {
             frase = "Venga, no hay nada de malo en especular un poco";
-            exito -= 0.0f;
+            exito -= 0.1f;
         }
         else if (emocion == "triste")
         {
-            frase = "No me digas que te crees la historieta de Y…";
-            exito -= 0.0f;
+            frase = "No me digas que te crees la historieta de Susana…";
+            exito -= 0.2f;
         }
         else if (emocion == "sorprendido")
         {
             frase = "¿No te fías de mí? Pues que sepas que mi intuición nunca falla";
 
-            exito -= 0.0f;
+            exito -= 0.2f;
         }
         yield return StartCoroutine(EscribirLento());
         laRuleta();
