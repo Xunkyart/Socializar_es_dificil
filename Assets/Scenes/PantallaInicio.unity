@@ -2309,6 +2309,8 @@ MonoBehaviour:
   Shutter: {fileID: 8300000, guid: 2442d3d8d4abf4045a0f17916d5744b2, type: 3}
   Exit: {fileID: 8300000, guid: bbe05abc4a4c45146a0a831ea83a5084, type: 3}
   Drag: {fileID: 8300000, guid: 82086769d07b68549b081a926d806568, type: 3}
+  Win: {fileID: 8300000, guid: 6b267ce20b5441e45a42138bd31537ae, type: 3}
+  Lose: {fileID: 8300000, guid: 5fd569429b0e446419d55e6c9e16d508, type: 3}
 --- !u!4 &476511591
 Transform:
   m_ObjectHideFlags: 0

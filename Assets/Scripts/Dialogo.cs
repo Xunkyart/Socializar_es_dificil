@@ -26,6 +26,15 @@ public class Dialogo : MonoBehaviour
     bool haPerdido = false;
     bool haTerminado = false;
 
+    AudioManager audioManager;
+
+
+     private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
+
     void Start()
     {
         SlidersUI.SetActive(false);
@@ -114,6 +123,7 @@ public class Dialogo : MonoBehaviour
             haTerminado = true;
             PararDialogo();
             StartOutro();
+
         }
     }
 

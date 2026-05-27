@@ -6,13 +6,15 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource FXSource;
 
     //public AudioClip
-    public AudioClip Prueba;
+    public AudioClip Fondo;
     public AudioClip Slider;
     public AudioClip Button;
     public AudioClip Shutter;
     public AudioClip Exit;
     public AudioClip Drag;
-
+    public AudioClip Super;
+    public AudioClip Win;
+    public AudioClip Lose;  
 
      void Awake()
      {
@@ -22,7 +24,7 @@ public class AudioManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        musicSource.clip = Prueba;
+        musicSource.clip = Fondo;
         musicSource.Play();
     }
 

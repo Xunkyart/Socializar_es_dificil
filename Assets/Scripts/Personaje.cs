@@ -14,7 +14,7 @@ public class Personaje : MonoBehaviour
     string alturaComisuraDcha = "media";
 
     //  PICKERS
-    public GameObject cejaIZq;
+    public GameObject cejaIzq;
     public GameObject cejaDcha;
     public GameObject labioInf;
     public GameObject dientesInf;
@@ -47,7 +47,7 @@ public class Personaje : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        posInicialCejaIzq = cejaIZq.transform.position;
+        posInicialCejaIzq = cejaIzq.transform.position;
         posInicialCejaDcha = cejaDcha.transform.position;
         posInicialLabioInf = labioInf.transform.position;
         posInicialDientesInf = dientesInf.transform.position;
@@ -108,7 +108,7 @@ public class Personaje : MonoBehaviour
     public void getSliderCejaIzq()
     {
         float valorCejaIzq = sliderCejaIzq.value;
-        cejaIZq.transform.position = new UnityEngine.Vector3(
+        cejaIzq.transform.position = new UnityEngine.Vector3(
             posInicialCejaIzq.x,
             posInicialCejaIzq.y + valorCejaIzq * 0.012f,
             posInicialCejaIzq.z
