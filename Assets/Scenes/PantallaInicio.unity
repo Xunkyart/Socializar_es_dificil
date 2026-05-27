@@ -2303,12 +2303,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   musicSource: {fileID: 581167417}
   FXSource: {fileID: 1718953757}
-  Prueba: {fileID: 8300000, guid: fecd101ae9193ea47afcb8ef0b1854e6, type: 3}
+  Fondo: {fileID: 0}
   Slider: {fileID: 8300000, guid: 0577f77fe75a22143adb2511ea3ef8c9, type: 3}
   Button: {fileID: 8300000, guid: 036ea2340fae08b46bfb9567085a0d4c, type: 3}
   Shutter: {fileID: 8300000, guid: 2442d3d8d4abf4045a0f17916d5744b2, type: 3}
   Exit: {fileID: 8300000, guid: bbe05abc4a4c45146a0a831ea83a5084, type: 3}
   Drag: {fileID: 8300000, guid: 82086769d07b68549b081a926d806568, type: 3}
+  Super: {fileID: 0}
   Win: {fileID: 8300000, guid: 6b267ce20b5441e45a42138bd31537ae, type: 3}
   Lose: {fileID: 8300000, guid: 5fd569429b0e446419d55e6c9e16d508, type: 3}
 --- !u!4 &476511591
@@ -2396,10 +2397,10 @@ Canvas:
   m_GameObject: {fileID: 510710082}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_RenderMode: 1
+  m_Camera: {fileID: 961739752}
+  m_PlaneDistance: 0.4
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -2911,10 +2912,10 @@ Canvas:
   m_GameObject: {fileID: 683504633}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_RenderMode: 1
+  m_Camera: {fileID: 961739752}
+  m_PlaneDistance: 0.4
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -4652,10 +4653,10 @@ Canvas:
   m_GameObject: {fileID: 1181372662}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_RenderMode: 1
+  m_Camera: {fileID: 961739752}
+  m_PlaneDistance: 0.4
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -5288,7 +5289,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.2318609, y: 0}
+  m_AnchoredPosition: {x: -1.2318611, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1372882178
@@ -6099,10 +6100,10 @@ Canvas:
   m_GameObject: {fileID: 1615281404}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_RenderMode: 1
+  m_Camera: {fileID: 961739752}
+  m_PlaneDistance: 0.4
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0

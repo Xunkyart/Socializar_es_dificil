@@ -67,5 +67,5 @@ public class GameManager : MonoBehaviour
     public void volverInicio()
     {
         SceneManager.LoadScene("PantallaInicio");
-    }  
+    }
 }

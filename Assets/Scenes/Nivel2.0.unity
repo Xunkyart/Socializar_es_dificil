@@ -261,10 +261,10 @@ Canvas:
   m_GameObject: {fileID: 1806577}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_RenderMode: 1
+  m_Camera: {fileID: 1289596163}
+  m_PlaneDistance: 0.4
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -272,8 +272,8 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: -453683739
-  m_SortingOrder: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 307
   m_TargetDisplay: 0
 --- !u!224 &1806581
 RectTransform:
@@ -1409,8 +1409,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74918782}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2292, y: 0, z: 1621.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5220,10 +5220,10 @@ Canvas:
   m_GameObject: {fileID: 303060501}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_RenderMode: 1
+  m_Camera: {fileID: 1289596163}
+  m_PlaneDistance: 0.4
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -5231,8 +5231,8 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: -453683739
-  m_SortingOrder: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 444
   m_TargetDisplay: 0
 --- !u!224 &303060505
 RectTransform:
@@ -15987,7 +15987,7 @@ Light:
   serializedVersion: 12
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 6.83
+  m_Intensity: 3.04
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -20184,7 +20184,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -89.893}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -2.1206017, y: -0.0010995865}
+  m_AnchoredPosition: {x: -2.1205978, y: -0.0010995865}
   m_SizeDelta: {x: 22.3618, y: 20.5623}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1064612450
@@ -29174,10 +29174,10 @@ Canvas:
   m_GameObject: {fileID: 1590403264}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 1289596163}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PlaneDistance: 0.4
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -29185,8 +29185,8 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: -453683739
-  m_SortingOrder: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 104
   m_TargetDisplay: 0
 --- !u!224 &1590403268
 RectTransform:
@@ -33044,10 +33044,10 @@ Canvas:
   m_GameObject: {fileID: 1830109142}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_RenderMode: 1
+  m_Camera: {fileID: 1289596163}
+  m_PlaneDistance: 0.4
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -33055,8 +33055,8 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: -453683739
-  m_SortingOrder: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 470
   m_TargetDisplay: 0
 --- !u!224 &1830109146
 RectTransform:
@@ -38537,9 +38537,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1289596164}
-  - {fileID: 495806640}
   - {fileID: 74918783}
-  - {fileID: 23534805}
   - {fileID: 1536865509}
   - {fileID: 1186565558}
   - {fileID: 1342897371}
@@ -38547,4 +38545,6 @@ SceneRoots:
   - {fileID: 542931927}
   - {fileID: 956140761}
   - {fileID: 251807628}
+  - {fileID: 495806640}
   - {fileID: 719211819}
+  - {fileID: 23534805}

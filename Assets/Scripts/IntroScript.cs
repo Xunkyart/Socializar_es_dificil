@@ -88,7 +88,7 @@ public class InicioScript : MonoBehaviour
 
     public void startLvl1()
     {
-        SceneManager.LoadScene("Nivel");
+        SceneManager.LoadScene("Nivel2.0");
     }  
 
 
