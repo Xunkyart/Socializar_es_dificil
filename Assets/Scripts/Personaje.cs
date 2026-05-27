@@ -38,7 +38,9 @@ public class Personaje : MonoBehaviour
 
     //POSICIONES INICIALES Y DE REFERENCIA PARA LAS MODIFICACIONES
     UnityEngine.Vector3 posInicialCejaIzq;
+    UnityEngine.Vector3 rotInicialCejaIzq;
     UnityEngine.Vector3 posInicialCejaDcha;
+    UnityEngine.Vector3 rotInicialCejaDcha;
     UnityEngine.Vector3 posInicialLabioInf;
     UnityEngine.Vector3 posInicialDientesInf;
     UnityEngine.Vector3 posInicialComisuraIzq;
@@ -48,7 +50,9 @@ public class Personaje : MonoBehaviour
     void Start()
     {
         posInicialCejaIzq = cejaIzq.transform.position;
+        rotInicialCejaIzq = cejaIzq.transform.rotation.eulerAngles;
         posInicialCejaDcha = cejaDcha.transform.position;
+        rotInicialCejaDcha = cejaDcha.transform.rotation.eulerAngles;
         posInicialLabioInf = labioInf.transform.position;
         posInicialDientesInf = dientesInf.transform.position;
         posInicialComisuraIzq = comisuraIzq.transform.position;
@@ -109,9 +113,14 @@ public class Personaje : MonoBehaviour
     {
         float valorCejaIzq = sliderCejaIzq.value;
         cejaIzq.transform.position = new UnityEngine.Vector3(
-            posInicialCejaIzq.x,
+            posInicialCejaIzq.x + valorCejaIzq * 0.005f,
             posInicialCejaIzq.y + valorCejaIzq * 0.012f,
             posInicialCejaIzq.z
+        );
+        cejaIzq.transform.rotation = UnityEngine.Quaternion.Euler(
+            rotInicialCejaIzq.x,
+            rotInicialCejaIzq.y,
+            rotInicialCejaIzq.z + valorCejaIzq * 12f
         );
         if (valorCejaIzq > 0.44f)
         {
@@ -131,9 +140,14 @@ public class Personaje : MonoBehaviour
     {
         float valorCejaDcha = SliderCejaDcha.value;
         cejaDcha.transform.position = new UnityEngine.Vector3(
-            posInicialCejaDcha.x,
+            posInicialCejaDcha.x - valorCejaDcha * 0.005f,
             posInicialCejaDcha.y + valorCejaDcha * 0.012f,
             posInicialCejaDcha.z
+        );
+        cejaDcha.transform.rotation = UnityEngine.Quaternion.Euler(
+            rotInicialCejaDcha.x,
+            rotInicialCejaDcha.y,
+            rotInicialCejaDcha.z - valorCejaDcha * 12f
         );
         if (valorCejaDcha > 0.44f)
         {
@@ -153,7 +167,7 @@ public class Personaje : MonoBehaviour
     {
         float valorAperturaBoca = SliderAperturaBoca.value;
         labioInf.transform.position = new UnityEngine.Vector3(
-            posInicialLabioInf.x,
+            posInicialLabioInf.x ,
             posInicialLabioInf.y + valorAperturaBoca * 0.02f,
             posInicialLabioInf.z
         );
@@ -176,7 +190,7 @@ public class Personaje : MonoBehaviour
     {
         float valorComisuraIzq = SliderComisuraIzq.value;
         comisuraIzq.transform.position = new UnityEngine.Vector3(
-            posInicialComisuraIzq.x,
+            posInicialComisuraIzq.x + valorComisuraIzq * 0.0025f,
             posInicialComisuraIzq.y + valorComisuraIzq * 0.012f,
             posInicialComisuraIzq.z
         );
@@ -199,7 +213,7 @@ public class Personaje : MonoBehaviour
     {
         float valorComisuraDcha = SliderComisuraDcha.value;
         comisuraDcha.transform.position = new UnityEngine.Vector3(
-            posInicialComisuraDcha.x,
+            posInicialComisuraDcha.x - valorComisuraDcha * 0.0025f,
             posInicialComisuraDcha.y + valorComisuraDcha * 0.012f,
             posInicialComisuraDcha.z
         );
