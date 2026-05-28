@@ -560,7 +560,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1497127049}
+        - m_Target: {fileID: 1497127051}
           m_TargetAssemblyTypeName: FXManager, Assembly-CSharp
           m_MethodName: PlaySliderSFX
           m_Mode: 1
@@ -1084,7 +1084,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1497127049}
+      - m_Target: {fileID: 1497127051}
         m_TargetAssemblyTypeName: FXManager, Assembly-CSharp
         m_MethodName: PlayButtonSFX
         m_Mode: 1
@@ -1229,7 +1229,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1497127049}
+      - m_Target: {fileID: 1497127051}
         m_TargetAssemblyTypeName: FXManager, Assembly-CSharp
         m_MethodName: PlayButtonSFX
         m_Mode: 1
@@ -1374,7 +1374,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1497127049}
+      - m_Target: {fileID: 1497127051}
         m_TargetAssemblyTypeName: FXManager, Assembly-CSharp
         m_MethodName: PlayExitSFX
         m_Mode: 1
@@ -2697,6 +2697,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 476511591}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &585053280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 585053282}
+  - component: {fileID: 585053281}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &585053281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585053280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: d5d01963560be4b4ab469c33d1071e08, type: 2}
+--- !u!4 &585053282
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585053280}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.620117, y: 3.9499998, z: 7.354004}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &604426031
 GameObject:
   m_ObjectHideFlags: 0
@@ -3794,7 +3843,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1497127049}
+      - m_Target: {fileID: 1497127051}
         m_TargetAssemblyTypeName: FXManager, Assembly-CSharp
         m_MethodName: PlayButtonSFX
         m_Mode: 1
@@ -3939,7 +3988,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1497127049}
+      - m_Target: {fileID: 1497127051}
         m_TargetAssemblyTypeName: FXManager, Assembly-CSharp
         m_MethodName: PlayButtonSFX
         m_Mode: 1
@@ -4031,7 +4080,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -4450,7 +4499,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1497127049}
+      - m_Target: {fileID: 1497127051}
         m_TargetAssemblyTypeName: FXManager, Assembly-CSharp
         m_MethodName: PlayButtonSFX
         m_Mode: 1
@@ -5052,7 +5101,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1497127049}
+      - m_Target: {fileID: 1497127051}
         m_TargetAssemblyTypeName: FXManager, Assembly-CSharp
         m_MethodName: PlayButtonSFX
         m_Mode: 1
@@ -5334,7 +5383,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1497127049}
+      - m_Target: {fileID: 1497127051}
         m_TargetAssemblyTypeName: FXManager, Assembly-CSharp
         m_MethodName: PlayButtonSFX
         m_Mode: 1
@@ -5794,7 +5843,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1497127050}
-  - component: {fileID: 1497127049}
+  - component: {fileID: 1497127051}
   m_Layer: 0
   m_Name: 'FXManager '
   m_TagString: Audio
@@ -5802,26 +5851,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1497127049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1497127048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dd8d8bd680dbe04a90ed12b60409ddf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FXManager
-  FXSource: {fileID: 1718953757}
-  Slider: {fileID: 8300000, guid: 0577f77fe75a22143adb2511ea3ef8c9, type: 3}
-  Button: {fileID: 8300000, guid: 036ea2340fae08b46bfb9567085a0d4c, type: 3}
-  Shutter: {fileID: 8300000, guid: 2442d3d8d4abf4045a0f17916d5744b2, type: 3}
-  Exit: {fileID: 8300000, guid: bbe05abc4a4c45146a0a831ea83a5084, type: 3}
-  Drag: {fileID: 8300000, guid: 82086769d07b68549b081a926d806568, type: 3}
-  Win: {fileID: 8300000, guid: 6b267ce20b5441e45a42138bd31537ae, type: 3}
-  Loss: {fileID: 0}
 --- !u!4 &1497127050
 Transform:
   m_ObjectHideFlags: 0
@@ -5838,6 +5867,26 @@ Transform:
   - {fileID: 1718953758}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1497127051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497127048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd8d8bd680dbe04a90ed12b60409ddf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FXManager
+  FXSource: {fileID: 1718953757}
+  slider: {fileID: 8300000, guid: 0577f77fe75a22143adb2511ea3ef8c9, type: 3}
+  button: {fileID: 8300000, guid: 036ea2340fae08b46bfb9567085a0d4c, type: 3}
+  shutter: {fileID: 8300000, guid: 2442d3d8d4abf4045a0f17916d5744b2, type: 3}
+  exit: {fileID: 8300000, guid: bbe05abc4a4c45146a0a831ea83a5084, type: 3}
+  drag: {fileID: 8300000, guid: 82086769d07b68549b081a926d806568, type: 3}
+  win: {fileID: 8300000, guid: 6b267ce20b5441e45a42138bd31537ae, type: 3}
+  lose: {fileID: 8300000, guid: 5fd569429b0e446419d55e6c9e16d508, type: 3}
 --- !u!1 &1509064611
 GameObject:
   m_ObjectHideFlags: 0
@@ -5933,7 +5982,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1497127049}
+      - m_Target: {fileID: 1497127051}
         m_TargetAssemblyTypeName: FXManager, Assembly-CSharp
         m_MethodName: PlayButtonSFX
         m_Mode: 1
@@ -6079,7 +6128,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1497127049}
+      - m_Target: {fileID: 1497127051}
         m_TargetAssemblyTypeName: FXManager, Assembly-CSharp
         m_MethodName: PlayShutterSFX
         m_Mode: 1
@@ -6765,7 +6814,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1497127049}
+        - m_Target: {fileID: 1497127051}
           m_TargetAssemblyTypeName: FXManager, Assembly-CSharp
           m_MethodName: PlaySliderSFX
           m_Mode: 1
@@ -7037,7 +7086,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1497127049}
+      - m_Target: {fileID: 1497127051}
         m_TargetAssemblyTypeName: FXManager, Assembly-CSharp
         m_MethodName: PlayShutterSFX
         m_Mode: 1
@@ -7332,7 +7381,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1497127049}
+      - m_Target: {fileID: 1497127051}
         m_TargetAssemblyTypeName: FXManager, Assembly-CSharp
         m_MethodName: PlayButtonSFX
         m_Mode: 1
@@ -7523,3 +7572,4 @@ SceneRoots:
   - {fileID: 1407510286}
   - {fileID: 476511591}
   - {fileID: 1497127050}
+  - {fileID: 585053282}

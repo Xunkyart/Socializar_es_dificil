@@ -2,13 +2,24 @@ using UnityEngine;
 
 public class FXManager : MonoBehaviour
 {
-    [SerializeField] AudioSource FXSource; public AudioClip Slider;
-    public AudioClip Button;
-    public AudioClip Shutter;
-    public AudioClip Exit;
-    public AudioClip Drag;
-    public AudioClip Win;
-    public AudioClip Loss;  
+    [SerializeField] AudioSource FXSource;
+
+
+    public AudioClip slider;
+
+    public AudioClip button;
+
+    public AudioClip shutter;
+
+    public AudioClip exit;
+
+    public AudioClip drag;
+
+    public AudioClip win;
+
+    public AudioClip lose;  
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,30 +34,43 @@ public class FXManager : MonoBehaviour
 
     public void PlaySliderSFX()
     {
-        FXSource.PlayOneShot(Slider);
+        FXSource.PlayOneShot(slider);
 
     }
 
     public void PlayButtonSFX()
     {
-        FXSource.PlayOneShot(Button);
+        FXSource.PlayOneShot(button);
 
     }
    
     public void PlayShutterSFX()
     {
-        FXSource.PlayOneShot(Shutter);
+        FXSource.PlayOneShot(shutter);
 
     }
 
    public void PlayExitSFX()
     {
-        FXSource.PlayOneShot(Exit);
+        FXSource.PlayOneShot(exit);
 
     }
 
     public void PlayDragSFX()
     {
-        FXSource.PlayOneShot(Drag);
+        FXSource.PlayOneShot(drag);
     }
+
+    public void PlayWinSFX()
+    {
+        FXSource.PlayOneShot(win);
+    }
+
+    public void PlayLoseSFX()
+    {
+        FXSource.PlayOneShot(lose);
+    }
+
 }
+
+

@@ -14,6 +14,11 @@ public class GameManager : MonoBehaviour
     FXManager audioManager;
 
 
+
+   
+
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -34,12 +39,12 @@ public class GameManager : MonoBehaviour
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<FXManager>();
     }
 
-
+    
     public void ActivarInterfazFinalBueno()
-    {
+    {  
+        audioManager.PlaySFX(audioManager.win);
         Interfaz_FinalBueno.SetActive(true);
-        audioManager.PlaySFX(audioManager.Win);
-
+      
         Interfaz_FinalNeutral.SetActive(false);
         Interfaz_Base.SetActive(false);
         Interfaz_FinalMalo.SetActive(false);
@@ -57,7 +62,7 @@ public class GameManager : MonoBehaviour
     public void ActivarInterfazFinalMalo()
     {
         Interfaz_FinalMalo.SetActive(true);
-        audioManager.PlaySFX(audioManager.Loss);
+        audioManager.PlaySFX(audioManager.lose);
 
         Interfaz_FinalNeutral.SetActive(false);
         Interfaz_FinalBueno.SetActive(false);

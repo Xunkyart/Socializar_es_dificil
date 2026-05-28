@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Dialogo : MonoBehaviour
 {
+
+    FXManager audioManager;
     
     public GameObject SlidersUI;
     TextMeshProUGUI objDialogo;
@@ -45,6 +47,12 @@ public class Dialogo : MonoBehaviour
             bloquesDisponibles.Add(i);
         }
     }
+
+     private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<FXManager>();
+    }
+
 
     void Update()
     {
@@ -578,6 +586,8 @@ public class Dialogo : MonoBehaviour
         if (exito >= 0.7f)
         {
             gameManager.ActivarInterfazFinalBueno();
+            audioManager.PlaySFX(audioManager.win);
+
         }
         else if (exito >= 0.4f)
         {
@@ -598,6 +608,7 @@ public class Dialogo : MonoBehaviour
         if (exito <= -0.5f)
         {
             gameManager.ActivarInterfazFinalMalo();
+            audioManager.PlaySFX(audioManager.lose);
         }
     }
 
