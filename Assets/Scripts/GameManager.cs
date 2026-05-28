@@ -3,9 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-
-    public Dialogo dialogo;
-
     public GameObject Interfaz_FinalBueno;
     public GameObject Interfaz_FinalNeutral;
     public GameObject Interfaz_FinalMalo;
@@ -26,46 +23,39 @@ public class GameManager : MonoBehaviour
         Interfaz_FinalNeutral.SetActive(false);
         Interfaz_FinalMalo.SetActive(false);
         Interfaz_Base.SetActive(true);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        //if (dialogo.exito <=0);
         
     }
 
-    private void Awake()
+    /*private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<FXManager>();
-    }
+    }*/
 
     
     public void ActivarInterfazFinalBueno()
     {  
-        audioManager.PlaySFX(audioManager.win);
+        //audioManager.PlaySFX(audioManager.win);
         Interfaz_FinalBueno.SetActive(true);
-      
-        Interfaz_FinalNeutral.SetActive(false);
         Interfaz_Base.SetActive(false);
-        Interfaz_FinalMalo.SetActive(false);
     }
 
     public void ActivarInterfazFinalNeutral()
     {
         Interfaz_FinalNeutral.SetActive(true);
-        
-        Interfaz_FinalBueno.SetActive(false);
         Interfaz_Base.SetActive(false);
-        Interfaz_FinalMalo.SetActive(false);
     }
 
     public void ActivarInterfazFinalMalo()
     {
         Interfaz_FinalMalo.SetActive(true);
-        audioManager.PlaySFX(audioManager.lose);
-
-        Interfaz_FinalNeutral.SetActive(false);
-        Interfaz_FinalBueno.SetActive(false);
+        //audioManager.PlaySFX(audioManager.lose);
         Interfaz_Base.SetActive(false);
     }
 

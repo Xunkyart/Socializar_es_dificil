@@ -18,18 +18,14 @@ public class Dialogo : MonoBehaviour
     bool escribiendoBloque = false;
     int minListaBloques = 1;
     int maxListaBloques = 6;
-    public float exito = 0.5f;
+    public float exito = 0.0f;
     GameObject personajeJugador;
     string emocion;
     public int bloquesPartida = 5; //Incluye la introducción, no incluye el outro ni el fail.
-    //public int[] listadoFrases;
-
-     //Referencia al GameManager para activar las interfaces finales
     public GameManager gameManager;
-    bool haPerdido = false;
-    bool haTerminado = false;
     public GameObject subrayado;
-   
+    bool perdiste = false;
+    bool failSeHaMostrado = false;
 
      
 
@@ -48,20 +44,26 @@ public class Dialogo : MonoBehaviour
         }
     }
 
-     private void Awake()
+   /* private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<FXManager>();
-    }
+    }*/
 
 
     void Update()
     {
-        //para que el dialogo no haga cosas raras si se ha perdido o ha terminado el juego
-        if (haPerdido || haTerminado) return;
-
         // Actualizar la emoción del personaje
         emocion = personajeJugador.GetComponent<Personaje>().emocion;
-        if (escribiendoBloque == false && bloquesPartida > 0)
+        if (exito <= 0 && perdiste == false)
+        {
+            perdiste = true;
+            StopAllCoroutines();
+        }
+        else if (perdiste == true && failSeHaMostrado == false)
+        {
+            StartCoroutine(Fail());
+        }
+        else if (escribiendoBloque == false && bloquesPartida > 0 && perdiste == false)
         {
             //INTRODUCCIÓN
             if (bloqueIdentificador == 0)
@@ -95,43 +97,16 @@ public class Dialogo : MonoBehaviour
             }
         }
 
-        ComprobarEstadoFinal();
     }
-    // Parar las corrutinas y que salga la outro o el fail
-    public void PararDialogo()
-    {
-        StopAllCoroutines();
-        escribiendoBloque = false;
-       
-    }
-
+    
+ 
+   
     public void StartOutro()
     {
         StartCoroutine(Outro());
     }
 
-    public void StartFail()
-    {
-        StartCoroutine(Fail());
-    }
-
-    void ComprobarEstadoFinal()
-    {
-        if (!haPerdido && exito < 0f)
-        {
-            haPerdido = true;
-            PararDialogo();
-            StartFail();
-            return;
-        }
-        if (!haTerminado && bloquesDisponibles.Count == 1)
-        {
-            haTerminado = true;
-            PararDialogo();
-            StartOutro();
-
-        }
-    }
+  
 
     IEnumerator MostrarSliders()
     {
@@ -572,12 +547,12 @@ public class Dialogo : MonoBehaviour
         else if (exito >= 0.4f)
         {
             frase =
-                "Bueno, debería ir yéndome, no puedo decir que ha sido un placer volver a verte. Sigues igual de rarito que en el instituto, a ver si espabilas.";
+                "Vaya, mira que hora es, mejor me voy ya. Ha estado bien ponernos al día… ya nos veremos por ahi, supongo";
         }
         else
         {
             frase =
-                "Vaya, mira que hora es, mejor me voy ya. Ha estado bien ponernos al día… ya nos veremos por ahi, supongo";
+                "Bueno, debería ir yéndome, no puedo decir que ha sido un placer volver a verte. Sigues igual de rarito que en el instituto, a ver si espabilas.";
         }
         yield return StartCoroutine(EscribirLento());
         StopAllCoroutines();
@@ -586,7 +561,7 @@ public class Dialogo : MonoBehaviour
         if (exito >= 0.7f)
         {
             gameManager.ActivarInterfazFinalBueno();
-            audioManager.PlaySFX(audioManager.win);
+            //audioManager.PlaySFX(audioManager.win);
 
         }
         else if (exito >= 0.4f)
@@ -597,19 +572,14 @@ public class Dialogo : MonoBehaviour
 
     IEnumerator Fail()
     {
+        objDialogo.text = " ";
+        failSeHaMostrado = true;
         escribiendoBloque = true;
-        if (exito <= -0.5f)
-        {
-            frase = "¡Menudo payaso! Es imposible hablar contigo. Hasta nunca.";
-        }
+        frase = "¡Menudo payaso! Es imposible hablar contigo. Hasta nunca.";
         yield return StartCoroutine(EscribirLento());
         escribiendoBloque = false;
-
-        if (exito <= -0.5f)
-        {
-            gameManager.ActivarInterfazFinalMalo();
-            audioManager.PlaySFX(audioManager.lose);
-        }
+        gameManager.ActivarInterfazFinalMalo();
+        //audioManager.PlaySFX(audioManager.lose);
     }
 
     //ESCRIBE "FRASE" EN PANTALLA LETRA POR LETRA, ESPERA tiempoEntreFrases SEGUNDOS Y BORRA EL TEXTO.
