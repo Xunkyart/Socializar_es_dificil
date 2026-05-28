@@ -555,7 +555,6 @@ public class Dialogo : MonoBehaviour
                 "Bueno, debería ir yéndome, no puedo decir que ha sido un placer volver a verte. Sigues igual de rarito que en el instituto, a ver si espabilas.";
         }
         yield return StartCoroutine(EscribirLento());
-        StopAllCoroutines();
         escribiendoBloque = false;
 
         if (exito >= 0.7f)
@@ -567,6 +566,11 @@ public class Dialogo : MonoBehaviour
         else if (exito >= 0.4f)
         {
             gameManager.ActivarInterfazFinalNeutral();
+        }
+        else
+        {
+            gameManager.ActivarInterfazFinalMalo();
+            //audioManager.PlaySFX(audioManager.lose);
         }
     }
 
